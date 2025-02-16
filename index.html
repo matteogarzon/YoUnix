@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoUnix</title>
+
+    <meta name="author" content="Matteo Garzon">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css"> 
+
+</head>
+<body id="home">
+    <button class="toggle-btn" id="toggleButton"><i class="bi bi-list"></i></button>
+    <div class="navbar vertical-navbar" id="navbar">
+        <a href="/html/history.html">History</a>
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">File and Directory Management <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/html/file_directory_management/fdm_cd.html">cd - Change directory</a>
+                <a href="/html/file_directory_management/fdm_cp.html">cp - Copy files or directories</a>
+                <a href="/html/file_directory_management/fdm_locate.html">locate - Find files and directories</a>
+                <a href="/html/file_directory_management/fdm_ls.html">ls - List directory contents</a>
+                <a href="/html/file_directory_management/fdm_mkdir.html">mkdir - Create a new directory</a>
+                <a href="/html/file_directory_management/fdm_mv.html">mv - Move or rename files or directories</a>
+                <a href="/html/file_directory_management/fdm_pwd.html">pwd - Print current directory</a>
+                <a href="/html/file_directory_management/fdm_rm.html">rm - Remove files or directories</a>
+                <a href="/html/file_directory_management/fdm_usermod.html">usermod - Modifies existing user's account settings</a>
+                <a href="/html/file_directory_management/fdm_touch.html">touch - Create an empty file or update file timestamp</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">File Content Viewing and Editing<span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/html/file_content_viewing_editing/fcve_cat.html">cat - Concatenate and display file content</a>
+                <a href="/html/file_content_viewing_editing/fcve_comm.html">comm - Compare sorted files</a>
+                <a href="/html/file_content_viewing_editing/fcve_diff.html">diff - Compare files</a>
+                <a href="/html/file_content_viewing_editing/fcve_head.tail.html">head / tail - Display the beginning or end of files</a>
+                <a href="/html/file_content_viewing_editing/fcve_nano">nano - Text editor for editing files directly in the terminal</a>
+                <a href="/html/file_content_viewing_editing/fcve_wc.html">wc - Word count</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">Text Processing<span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/html/text_processing/tp_awk.html">awk - Search for text in files</a>
+                <a href="/html/text_processing/tp_cut.html">cut - Remove sections of each line in a file</a>
+                <a href="/html/text_processing/tp_find.html">find - Remove sections of each line in a file</a>
+                <a href="/html/text_processing/tp_grep.html">grep - Search for text in files</a>
+                <a href="/html/text_processing/tp_sed.html">sed - Stream editor for searching and replacing text</a>
+                <a href="/html/text_processing/tp_sort.html">sort - Sort lines of text files</a>
+                <a href="/html/text_processing/tp_tr.html">tr - Translate or delete characters</a>
+                <a href="/html/text_processing/tp_uniq.html">uniq - Remove duplicate lines from sorted files</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">File Permissions and Ownership<span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/html/file_permission_ownership/fpo_chattr.html">chattr - Change file attributes</a>
+                <a href="/html/file_permission_ownership/fpo_chgrp.html">chgrp - Change file group ownership</a>
+                <a href="/html/file_permission_ownership/fpo_chmod.html">chmod - Change file permissions</a>
+                <a href="/html/file_permission_ownership/fpo_chown.html">chown - Change file owner and group</a>
+                <a href="/html/file_permission_ownership/fpo_getfacl.html">getfacl - Display ACL</a>
+                <a href="/html/file_permission_ownership/fpo_setfacl.html">setfacl - Set ACL</a>
+                <a href="/html/file_permission_ownership/fpo_stat.html">stat - Display information about files and file systems</a>
+                <a href="/html/file_permission_ownership/fpo_umask.html">umask - Set default file permissions</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">Compression and Archiving<span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/html/compressing_archiving/ca_tar.html">tar</a>
+                <a href="/html/compressing_archiving/ca_gunzip.html">gunzip</a>
+                <a href="/html/compressing_archiving/ca_gzip.html">gzip</a>
+                <a href="/html/compressing_archiving/ca_zip.html">zip</a>
+                <a href="/html/compressing_archiving/ca_bzip2.html">bzip2</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">System Monitoring and Management<span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="#dropdown-content" class="menu-toggle">System info<span class="arrow">▼</span></a>
+                <div class="dropdown-content">
+                    <a href="/html/system_monitoring_management/smm_ps.html">ps - Display information about active processes</a>
+                    <a href="/html/system_monitoring_management/smm_top.html">top - Display real-time process information</a>
+                    <a href="/html/system_monitoring_management/smm_df.html">df - Show disk space usage</a>
+                    <a href="/html/system_monitoring_management/smm_du.html">du - Estimate file and directory space usage</a>
+                    <a href="/html/system_monitoring_management/smm_uptime.html">uptime - Show how long the system has been running</a>
+                    <a href="/html/system_monitoring_management/smm_system_profiler.html">system_profiler - Provide detailed system information</a>
+                    <a href="/html/system_monitoring_management/smm_uname.html">uname - Provide system information</a>
+                    <a href="/html/system_monitoring_management/smm_sysctl.html">sysctl - View and modify kernel parameters at runtime</a>
+                    <a href="/html/system_monitoring_management/smm_iostat.html">iostat - Provide input/output statistics</a>
+                    <a href="/html/system_monitoring_management/smm_pmset.html">pmset - Manage power settings</a>
+                    <a href="/html/system_monitoring_management/smm_watch.html">watch - Runs a command repeatedly at specified intervals</a>
+                </div>
+                <a href="#dropdown-content" class="menu-toggle">System Shutdown and Reboot<span class="arrow">▼</span></a>
+                <div class="dropdown-content">
+                    <a href="/html/system_monitoring_management/smm_shutdown.html">shutdown - Bring down the system safely</a>
+                    <a href="/html/system_monitoring_management/smm_reboot.html">reboot - Reboot the system</a>
+                    <a href="/html/system_monitoring_management/smm_halt.html">halt - Stop the system</a>
+                    <a href="/html/system_monitoring_management/smm_poweroff.html">poweroff - Power off the system</a>
+                    <a href="/html/system_monitoring_management/smm_caffeinate.html">caffeinate - Prevent the system from sleeping</a>
+                </div>
+                <a href="#dropdown-content" class="menu-toggle">Job Control<span class="arrow">▼</span></a>
+                <div class="dropdown-content">
+                    <a href="/html/system_monitoring_management/smm_jobs.html">jobs - List active jobs</a>
+                    <a href="/html/system_monitoring_management/smm_kill.html">kill - Terminate a process by PID</a>
+                    <a href="/html/system_monitoring_management/smm_bg.html">bg - Run a job in the background</a>
+                    <a href="/html/system_monitoring_management/smm_fg.html">fg - Run a job in the foreground</a>
+                    <a href="/html/system_monitoring_management/smm_ctrl+key.html">Control Keys - Some shortcuts to make life easier</a>
+                    <a href="/html/system_monitoring_management/smm_ulimit.html">ulimit - Set or display user process limits</a>
+                    <a href="/html/system_monitoring_management/smm_pgrep.html">pgrep - Set or display user process limits</a>
+                    <a href="/html/system_monitoring_management/smm_nice.html">nice - Set a process's priority</a>
+                    <a href="/html/system_monitoring_management/smm_nohup.html">nohup - Run a command after logout)</a>
+                    <a href="/html/system_monitoring_management/smm_renice.html">renice - Change the priority of a running process</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">User and Group Management<span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/html/user_group_management/ugm_useradd.html">useradd - Add a user</a>
+                <a href="/html/user_group_management/ugm_userdel.html">userdel - Delete a user</a>
+                <a href="/html/user_group_management/ugm_passwd.html">passwd - Change user password</a>
+                <a href="/html/user_group_management/ugm_who.html">who - Display who is logged in to the system</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">Networking<span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/html/networking/n_curl.html">curl - Transfer data from or to a server</a>
+                <a href="/html/networking/n_ping.html">ping - Check network connectivity</a>
+                <a href="/html/networking/n_ifconfig.html">ifconfig - Display or configure network interfaces</a>
+                <a href="/html/networking/n_ip.html">ip - Display or configure network interfaces</a>
+                <a href="/html/networking/n_netstat.html">netstat - Display network connections, routing tables, etc.</a>
+                <a href="/html/networking/n_ssh.html">ssh - Secure Shell for remote login</a>
+                <a href="/html/networking/n_dig.html">dig - Query DNS (Domain Name System) for information</a>
+                <a href="/html/networking/n_nslookup.html">nslookup - Query DNS to obtain domain or IP address information</a>
+                <a href="/html/networking/n_traceroute.html">traceroute - Trace the path packets take to a network host</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">Environment Management<span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/html/environment_management/em_export.html">export - Set environment variables</a>
+                <a href="/html/environment_management/em_env.html">env - Display or modify environment variables</a>
+                <a href="/html/environment_management/em_alias.html">alias - Create shortcuts for commands</a>
+                <a href="/html/environment_management/em_unset.html">unset - Remove environment variables</a>
+                <a href="/html/environment_management/em_set.html">set - Configure or display shell variables and environment settings</a>
+                <a href="/html/environment_management/em_printenv.html">printenv - Manage and control print jobs and printers</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#dropdown-content" class="menu-toggle">Package Management<span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/html/package_management/pm_apt.html">apt - Install, remove, and manage packages</a>
+                <a href="/html/package_management/pm_yum.html">yum - Manage packages</a>
+                <a href="/html/package_management/pm_brew.html">brew - Homebrew package manager</a>
+                <a href="/html/package_management/pm_pacman.html">pacman - Package manager</a>
+                <a href="/html/package_management/pm_pip.html">pip - Install and manage Python packages from the Python Package Index (PyPI)</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="title">
+        <h1 class="typing">YoUnix</h1>
+    </div>
+
+    <div class="dropdown search-btn-container">
+        <form class="d-flex" role="search" autocomplete="off">
+            <input class="form-control me-2 dropdown-toggle" type="search" id="search" placeholder="Search" aria-label="Search">
+        </form>
+        <ul class="dropdown-menu" id="results-search">
+        </ul>
+    </div>
+
+    <a href="#introduction" class="arrow-down-container">
+        <i class="bi bi-chevron-compact-down arrow-icon"></i>
+    </a>
+    
+    <section id="introduction">
+        <div class="row">
+            <div class="col">
+                <h2>YoU can learn Unix.</h2>
+                <p>The shell is a specific <strong>user application</strong> that serves as the user's interface to the Unix operating system. It <strong>collects your input</strong> and <strong>runs programs</strong> based on the given input. When the program has finished executing, the shell shows its output.</p>
+                <p>Shell receives human-readable commands from users and translates them into something that the kernel - <i class="text-secondary">the software at the heart of a computer's operating system</i> - can comprehend. It is a command language translator that runs commands received from input devices — like your keyboard or files.</p>
+                <p>Millions of developers and geeks alike continue to use it today after decades of its initial inception because it is a strong tool that enables users to do advanced and powerful operations with a few keystrokes and lines of code. </p>
+                <p>Learning it can be overwhelming due to the numerous commands and options available. However, if you want to become a shell master, <strong>YoU are in the right place.</strong></p>
+                <h5>Happy Hacking!</h5>
+            </div>
+            <div class="col">
+                <div class="carousel slide" data-bs-ride="carousel"  data-bs-interval="3000">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./assets/home/shell1.webp" class="d-block w-100" alt="Computer with shell open.">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/home/shell2.jpg" class="d-block w-100" alt="User interface of shell.">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/home/shell3.jpg" class="d-block w-100" alt="Retro computer.">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./scripts/search.js"></script>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const navbar = document.getElementById('navbar');
+
+        toggleButton.addEventListener('click', () => {
+            navbar.classList.toggle('open'); 
+            toggleButton.classList.toggle('shift-right');});
+
+        const menuToggles = document.querySelectorAll('.menu-toggle');
+        menuToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(event) {
+                const dropdownContent = this.nextElementSibling;
+                dropdownContent.classList.toggle('open');
+                
+                const arrow = this.querySelector('.arrow');
+                if (dropdownContent.classList.contains('open')) {
+                    arrow.textContent = '▲'; 
+                } else {
+                    arrow.textContent = '▼';
+                }
+                event.preventDefault();
+            });
+        });
+        
+    </script>
+
+</body>
+</html>
