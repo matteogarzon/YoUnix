@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andrea Benvegnù">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>grep - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="grep">grep</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    <strong><u>grep</u></strong> <strong><u>(Global Regular Expression Print)</u></strong> is a powerful command-line tool that searches for specified patterns in files or text streams. It’s like having a digital magnifying glass that can find any text pattern you're looking for across one or multiple files.
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    grep <span class="text-warning"> [options]</span> <span class="text-secondary">pattern</span> <span class="text-primary"> [files]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+            <!-- Example option 1 -->
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-i</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-i (ignore case)</strong>: Ignores case while searching for the pattern.</p>
+
+                        <p>Example 1: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo "Hello World" | grep -i "hello"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> Hello World <br><br><br>!!! Grep normally reqires a file for input, but beacuse is allowed and for ease of explanations is used echo !!!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 2 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-r</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-r (recursive)</strong>: Searches files in directories and subdirectories. </p>
+
+                        <p>Example 2: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > grep -r "pattern" ./directory/</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> ./directory/file.txt: pattern </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 3 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-v</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-v (invert match)</strong>: Displays all lines that do not match the pattern.</p>
+
+                        <p>Example 3: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo -e "apple\nbanana\ncherry" | grep -v "banana"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> apple <br> cherry </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 4 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-l</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-l (files with matches)</strong>: Shows only the names of files that contain the pattern. </p>
+
+                        <p>Example 4: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > grep -l "error" *.log</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> error_log.txt </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 5 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-n</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-n (line number)</strong>: Displays the line number along with the matching lines. </p>
+
+                        <p>Example 5: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo -e "line 1\nline 2\nline 3" | grep -n "line 2"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> 2:line 2 </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 6 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-w</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-w (word match)</strong>: Matches the exact word, not just a substring. </p>
+
+                        <p>Example 6: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo -e "apple pie\npineapple" | grep -w "apple"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> apple pie </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 7 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-c</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-c (count matches)</strong>: Counts the number of lines that match the pattern. </p>
+
+                        <p>Example 7: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo -e "apple\nbanana\napple" | grep -c "apple"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> 2 </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 8 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-o</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-o (only matching)</strong>: Outputs only the matched parts of the line. </p>
+
+                        <p>Example 8: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo "apple banana apple" | grep -o "apple"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> apple <br> apple</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 9 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-A</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-A (after context)</strong>: Shows a specified number of lines after the matching line. </p>
+
+                        <p>Example 9: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo -e "apple\nbanana\ncherry" | grep -A 1 "banana"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> banana <br> cherry</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 10 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-B</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-B (before context)</strong>: Shows a specified number of lines before the matching line. </p>
+
+                        <p>Example 10: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo -e "apple\nbanana\ncherry" | grep -B 1 "banana"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> apple <br> banana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Andrea Benvegnù</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "What does the -i option in grep do?",
+                options: ["It only matches whole words.", "It ignores case while searching.", "It counts the matches.", "It displays matching files only."],
+                correct: 1 
+            },
+            {
+                question: "The -r option in grep allows searching inside multiple directories.",
+                options: ["True", "False"],
+                correct: 0
+            },
+            {
+                question: "Which option would you use to count how many times a pattern appears in a file?",
+                options: ["-v", "n", "-c", " -o"],
+                correct: 2
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

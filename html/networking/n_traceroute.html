@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Selcan Kaya">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>traceroute - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div> 
+        <h1 class="text-center command-title" data-value="traceroute">traceroute</h1>
+    </div> 
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The <b><u>traceroute</u></b> command is used to trace the path that packets take from your computer to a remote destination. 
+                    It shows each "hop" or router the packet passes through. This is useful for network troubleshooting to diagnose routing 
+                    problems or identify delays in the network.
+                </p>
+                <p>
+                    You can use it by typing <code>traceroute [destination]</code>, where "destination" can be a domain or IP address. The 
+                    command will then display the route, showing each hop along the way and its round-trip time.
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    traceroute <span class="text-warning"> [option]</span> <span class="text-primary"> [destination]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <!-- -m option -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-m</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                           This option helps you limit the depth of the trace. It's useful when you don't want the traceroute command to continue
+                           running indefinitely if the destination is too far.
+                        </p>
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-m</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> traceroute -m 15 www.example.com</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Tracing route to www.example.com with maximum 15 hops...</p>
+                        </div>
+                    </div> 
+                </div>
+
+                <!-- -p option -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-p</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            This option allows you to specify the destination port. This is helpful if you want to trace a specific 
+                            service (e.g., HTTP on port 80 or HTTPS on port 443).
+                        </p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-p</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> traceroute -p 80 www.example.com</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Tracing route to www.example.com using port 80 (HTTP)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -T option -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-T</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                             This makes traceroute use TCP packets instead of the default UDP packets. This is useful if ICMP traffic 
+                            is being filtered by firewalls or routers along the route.
+                        </p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-T</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> traceroute -T www.example.com</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Tracing route to www.example.com using TCP packets...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -I option -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-I</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            This option forces traceroute to use ICMP Echo requests instead of the default UDP packets. This mimics the 
+                            behavior of the ping command and is useful when ICMP is allowed but UDP is blocked.
+                        </p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-I</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> traceroute -I www.example.com</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Tracing route to www.example.com using ICMP Echo requests...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Selcan Kaya</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "What does the traceroute -m option do?",
+                options: ["Sets the maximum number of hops for the traceroute.", "Changes the destination port.", "Uses ICMP Echo requests.", "Limits the time taken to finish a trace."],
+                correct: 0 // Answer 1 is correct
+            },
+            {
+                question: "What type of packets does traceroute use by default?",
+                options: ["TCP", "UDP", "ICMP Echo", "None of the above."],
+                correct: 1 // Answer 2 is correct
+            },
+            {
+                question: "What does the -T option in traceroute do?",
+                options: ["Sets the maximum number of hops.", "Uses TCP packets instead of UDP.", "Uses ICMP Echo requests.", "Changes the destination port."],
+                correct: 1 // Answer 2 is correct
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

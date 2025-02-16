@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Marianna Dinon Spindola" />
+
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>nslookup - YoUnix</title>
+  </head>
+
+  <body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+      <div class="command-overlay"></div>
+
+      <h1 class="text-center command-title" data-value="nslookup">nslookup</h1>
+    </div>
+
+    <div class="main-container">
+      <div class="row appear">
+        <div class="col">
+          <h2 class="command-section-title">>Usage</h2>
+        </div>
+        <div class="col-10">
+          <p>
+            The command <strong><u>nslookup</u></strong> (short for
+            <strong>N</strong>ame <strong>S</strong>erver
+            <strong>L</strong>ookup) is a command-line tool used for querying
+            the Domain Name System (DNS) to obtain various information about
+            domain names and IP addresses. Its key functions are: <ul>
+              <li>Resolve domain names to IP addresses (forward lookup)</li>
+              <li>Resolve IP addresses to domain names (reverse lookup)</li>
+              <li>Test DNS servers by querying a specific DNS server</li>
+              <li>Troubleshoot DNS issues, such as incorrect records or slow response times.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+        <div class="row appear">
+          <div class="col">
+            <h2 class="command-section-title">>Synopsis</h2>
+          </div>
+          <div class="col-10 synopsis">
+            <span>
+              nslookup <span class="text-warning"> [option]</span>
+              <span class="text-primary"> [destination]</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <h2 class="command-section-title appear">>Options</h2>
+          </div>
+
+          <div class="container-fluid options">
+            <div class="row appear align-items-start">
+              <div class="col text-center">
+                <h3>-type=&lt;record&gt;</h3>
+              </div>
+              <div class="col-10 d-flex align-items-center flex-column">
+                <p>
+                  The command <strong>-type=&lt;record&gt;</strong> specifies
+                  the type of DNS record you want to query. Common types include
+                  A (Address record), MX (Mail Exchange), NS (Name Server),
+                  CNAME (Canonical Name), and PTR (Pointer Record).
+                </p>
+
+                <p>Example:</p>
+                <div class="shell-window">
+                  <div class="shell-window-top-box">
+                    <img
+                      class="shell-window-top-box-img"
+                      src="../../css/shell-dots.png"
+                      alt="Dots"
+                    />
+                    <div class="shell-window-top-text-box">
+                      <p class="shell-window-top-text"></p>
+                      <p class="shell-window-top-text">-type=&lt;record&gt;</p>
+                    </div>
+                  </div>
+                  <p class="shell-window-bottom-box">
+                    > nslookup -type=MX google.com
+                  </p>
+                  <hr class="shell-divider" />
+                  <p class="shell-window-bottom-box">Server: UnKnown <br>
+                    <br>
+                  Address: 192.168.0.1 <br>
+                  <br>
+                  Non-authoritative answer: <br>
+                  <br>
+                  google.com mail exchanger = 10 alt1.aspmx.l.google.com <br>
+                  google.com mail exchanger = 20 alt2.aspmx.l.google.com <br>
+                  google.com mail exchanger = 30 alt3.aspmx.l.google.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row appear align-items-start">
+              <div class="col text-center">
+                <h3>-debug</h3>
+              </div>
+              <div class="col-10 d-flex align-items-center flex-column">
+                <p>
+                  The command -debug provides a more detailed output about the
+                  DNS query process, including the steps taken and the response
+                  received. This can be invaluable for troubleshooting DNS
+                  issues and understanding how the query was processed by the
+                  DNS server.
+                </p>
+                <p>Example:</p>
+                <div class="shell-window">
+                  <div class="shell-window-top-box">
+                    <img
+                      class="shell-window-top-box-img"
+                      src="../../css/shell-dots.png"
+                      alt="Dots"
+                    />
+                    <div class="shell-window-top-text-box">
+                      <p class="shell-window-top-text"></p>
+                      <p class="shell-window-top-text">-debug</p>
+                    </div>
+                  </div>
+                  <p class="shell-window-bottom-box">
+                    > nslookup -debug www.example.com
+                  </p>
+                  <hr class="shell-divider" />
+                  <p class="shell-window-bottom-box">Server: UnKnown <br>
+                    <br>
+                  Address: 192.168.1.1 <br>
+                  ; DiG 9.10.6 www.example.com ;; global options: +cmd <br>
+                  www.example.com. 3600 IN A 93.184.216.34</p>
+                </div>
+              </div>
+            </div>
+            <div class="row appear align-items-start">
+              <div class="col text-center">
+                <h3>-timeout</h3>
+              </div>
+              <div class="col-10 d-flex align-items-center flex-column">
+                <p>
+                  The command -timeout=&lt;seconds&gt; sets the timeout period
+                  (in seconds) for waiting for a response from the DNS server,
+                  which is useful when querying a potentially slow /
+                  unresponsive DNS server or, if you're diagnosing timeouts.
+                </p>
+
+                <p>Example 1:</p>
+                <div class="shell-window">
+                  <div class="shell-window-top-box">
+                    <img
+                      class="shell-window-top-box-img"
+                      src="../../css/shell-dots.png"
+                      alt="Dots"
+                    />
+                    <div class="shell-window-top-text-box">
+                      <p class="shell-window-top-text"></p>
+                      <p class="shell-window-top-text">
+                        -timeout=&lt;seconds&gt;
+                      </p>
+                    </div>
+                  </div>
+                  <p class="shell-window-bottom-box">
+                    > nslookup -timeout=5 www.example.com
+                  </p>
+                  <hr class="shell-divider" />
+                  <p class="shell-window-bottom-box">Server: UnKnown <br>
+                    <br>
+                  Address: 192.168.1.1 <br>
+                  <br>
+                  Non-authoritative answer: Name: www.example.com <br>
+                  Addresses: 93.184.216.34</p>
+                </div>
+                <p>Example 2:</p>
+                <p>Timeout (DNS Server Not Responding in Time)</p>
+                <div class="shell-window">
+                  <div class="shell-window-top-box">
+                    <img
+                      class="shell-window-top-box-img"
+                      src="../../css/shell-dots.png"
+                      alt="Dots"
+                    />
+                    <div class="shell-window-top-text-box">
+                      <p class="shell-window-top-text"></p>
+                      <p class="shell-window-top-text">
+                        -timeout=&lt;seconds&gt;
+                      </p>
+                    </div>
+                  </div>
+                  <p class="shell-window-bottom-box">
+                    > nslookup -timeout=5 www.example.com
+                  </p>
+                  <hr class="shell-divider" />
+                  <p class="shell-window-bottom-box">
+                    Server: UnKnown <br>
+                    <br>
+                    Address: 192.168.1.1 <br>
+                    <br>
+                    ** server can't find www.example.com: Timed out</p>
+                </div>
+              </div>
+            </div>
+            <div class="row appear align-items-start">
+              <div class="col text-center">
+                <h3>server</h3>
+              </div>
+              <div class="col-10 d-flex align-items-center flex-column">
+                <p>
+                  The command server &lt;DNS_server_IP&gt; specifies a custom
+                  DNS server to query instead of the default system resolver.
+                </p>
+
+                <p>Example:</p>
+                <div class="shell-window">
+                  <div class="shell-window-top-box">
+                    <img
+                      class="shell-window-top-box-img"
+                      src="../../css/shell-dots.png"
+                      alt="Dots"
+                    />
+                    <div class="shell-window-top-text-box">
+                      <p class="shell-window-top-text"></p>
+                      <p class="shell-window-top-text">
+                        server &lt;DNS_server_IP&gt;
+                      </p>
+                    </div>
+                  </div>
+                  <p class="shell-window-bottom-box">
+                    > nslookup -server 8.8.8.8 www.nonexistentdomain.xyz
+                  </p>
+                  <hr class="shell-divider" />
+                  <p class="shell-window-bottom-box">
+                    Server: google-public-dns-a.google.com Address: 8.8.8.8 <br>
+                    Non-authoritative answer: Name: www.example.com <br>
+                    <br>
+                    Addresses: 93.184.216.34</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row appear">
+          <div class="col">
+            <h2 class="command-section-title">>Quiz</h2>
+          </div>
+          <div class="col-10">
+            <div class="bg-dark text-white card mb-4">
+              <!-- Card body -->
+              <div class="card-body">
+                <!-- quiz -->
+                <div class="mt-3">
+                  <div class="d-flex justify-content-between">
+                    <span id="quiz-progress">Progress:</span>
+                    <span id="question-number">Question ? out of ?</span>
+                  </div>
+                  <!-- progress bar -->
+                  <div class="mt-2">
+                    <div class="progress" style="height: 6px">
+                      <div
+                        class="progress-bar bg-success"
+                        id="progress-bar-quiz"
+                        role="progressbar"
+                        style="width: 0%"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-5">
+                  <!-- text -->
+                  <h3 class="mb-3" id="question-title">Question Title</h3>
+                  <div class="list-group" id="answer-options">
+                    <!-- list group item -->
+                    <div
+                      class="list-group-item list-group-item-action bg-dark text-white"
+                      aria-current="true"
+                    >
+                      <!-- form check -->
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="option1"
+                        />
+                        <label
+                          class="form-check-label stretched-link"
+                          for="option1"
+                          >Option 1</label
+                        >
+                      </div>
+                    </div>
+                    <!-- list group item -->
+                    <div
+                      class="list-group-item list-group-item-action bg-dark text-white"
+                    >
+                      <!-- form check -->
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="option2"
+                        />
+                        <label
+                          class="form-check-label stretched-link"
+                          for="option2"
+                          >Option 2</label
+                        >
+                      </div>
+                    </div>
+
+                    <!-- list group item -->
+                    <div
+                      class="list-group-item list-group-item-action bg-dark text-white"
+                    >
+                      <!-- form check -->
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="option3"
+                        />
+                        <label
+                          class="form-check-label stretched-link"
+                          for="option3"
+                          >Option 3</label
+                        >
+                      </div>
+                    </div>
+
+                    <!-- list group item -->
+                    <div
+                      class="list-group-item list-group-item-action bg-dark text-white"
+                    >
+                      <!-- form check -->
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="option4"
+                        />
+                        <label
+                          class="form-check-label stretched-link"
+                          for="option4"
+                          >Option 4</label
+                        >
+                      </div>
+                    </div>
+
+                    <!-- list group item -->
+                    <div
+                      class="list-group-item list-group-item-action bg-dark text-white"
+                    >
+                      <!-- form check -->
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="option5"
+                        />
+                        <label
+                          class="form-check-label stretched-link"
+                          for="option5"
+                          >Option 5</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="button-next">
+              Next
+            </button>
+          </div>
+
+          <!-- Modify accordingly. Remove this comment when done. -->
+          <address class="row appear mt-5">
+            Page written by Marianna Dinon Spindola
+          </address>
+        </div>
+      </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+      const questions = [
+        {
+          question:
+            "The -timeout=<seconds> option allows you to set the number of seconds that the nslookup command will wait for a response from the DNS server before timing out.",
+          options: [
+            "True",
+            "False",
+            "The -timeout option only sets the timeout for connection, not for receiving responses.",
+          ],
+          correct: 0,
+        },
+        {
+          question:
+            "The -recurse option in nslookup forces the DNS server to resolve the query recursively, querying other DNS servers if necessary.",
+          options: ["True", "False"],
+          correct: 0,
+        },
+        {
+          question:
+            "The -type=MX option in nslookup is used to query for the Mail Exchange (MX) records of a domain.",
+          options: ["True", "False"],
+          correct: 0,
+        },
+      ];
+
+      startQuiz(questions);
+    </script>
+  </body>
+</html>
+
+<!-- example -->

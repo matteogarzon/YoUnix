@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <meta name="author" content="Andrea Lepori">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+   
+    <title>mv - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+
+    <custom-navbar></custom-navbar>
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+       
+        <h1 class="text-center command-title" data-value="mv">mv</h1>
+    </div>
+
+   
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The <b><u>mv</u></b> command is used to <strong><u>move files and folders</u></strong> from the current directory to another, or to <strong><u>rename a file or folder</u></strong>.
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    mv <span class="text-warning"> [option]</span> <span class="text-primary"> [file-name]</span> <span class="text-success"> [directory-name]</span> <br>
+                    mv <span class="text-primary"> [file-name]</span> <span class="text-danger"> [file-new-name]</span> 
+                </span>
+            </div>
+        </div>
+        <div class="row appear align-items-start">
+
+            <div class="col text-center">
+                <h3></h3>
+            </div>
+            <div class="col-10 d-flex align-items-center flex-column">
+                <p>Example: <code>mv</code> used to rename a file</p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text"></p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> mv as_above.txt so_below.txt </p>
+                    <hr class="shell-divider">
+                    
+                    <p class="shell-window-bottom-box"> 
+                       >ls <br>
+                       so_below.txt 
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+            
+            <div class="container-fluid options">
+            
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-n</h3>
+                    </div>
+                    <div class="col-10">With this option, if a file in the destination folder has the same name, it won't be overwritten when moving the file.</div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-i</h3>
+                    </div>
+                    <div class="col-10">Asks for a confirmation before copying the files, pressing <code>y</code> will confirm the action and <code>n</code> will negate.</div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-f</h3>
+                    </div>
+                    <div class="col-10">Overwrites the existing files with the same name, does not ask for confirmation.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    
+                    <div class="card-body">
+                       
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                           
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                          
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                               
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                               
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            
+            <address class="row appear mt-5">Page written by Andrea Lepori</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "What command would you use to rename the file fish.txt to bird.txt?",
+                options: ["mv fish.txt birds.txt", "mv birds.txt fish.txt", "mv fish.txt ~"],
+                correct: 0 
+            },
+            {
+                question: "You want to move the file bread.txt to the directory ~, but you're not sure if there is a file with the same name. Should you use mv -n?",
+                options: ["Yes", "No"],
+                correct: 0
+            },
+            {
+                question: "You want to move the file pizza.txt to ~, where exists a file with the same name, and you want to overwrite it with the updated version. Which option do you use?",
+                options: ["mv -n pizza.txt ~", "mv -f pizza.txt ~", "mv -i pizza.txt ~"],
+                correct: 1
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ayman El Khadiri">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>brew - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="brew">brew</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                  Homebrew more commonly referred as "Brew" is a package manager that allows you to install and manage all the software packages you want to. It <strong><u>simplies the installation</u></strong> processes since brew is handling all the necessary dependencies and configurations making development easier.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    brew <span class="text-warning"> [command]</span> <span class="text-primary"> [package]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Commands</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>install</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>install is used to install any software / package or application from homebrew repositories. Homebrew downloads, installs and configures packages so that they are ready to use on your system when you call brew install. In addition, it installs any necessary dependencies for the software with simplicity and ease.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">install</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> brew install "packagename"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Package "packagename" installed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>remove</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                    <p>remove is used if we want to remove a package installed previously with brew. Along with the package, it also deletes its configurations.</p>
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">remove</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> brew remove "packagename"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Package "packagename" removed.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>update</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>update is used if we want to update Homebrew's internal database of available software packages and their versions. When you running this command, Homebrew downloads the latest information about all the packages it can install, so it knows if there are any new versions or new packages available. This command does not update the installed packages themselves—only Homebrew’s list of packages.</p>
+                    
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">update</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> brew update</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Packages updated.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>upgrade</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>upgrade is used if we want to update already installed packages to their latest versions. When you run this command, Homebrew checks if newer versions of the installed packages are available and, if so, upgrades them. This is useful for keeping software packages up-to-date with the latest features, bug fixes, and security patches.</p>
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">upgrade</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> brew upgrade</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Packages upgraded</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>search</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>search is used in the case we would like to find packages (also called “formulas”) in the Homebrew repository. This command helps you discover software packages available for installation, and it can also locate specific versions or cask packages for GUI applications.</p>
+                    
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">search</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> brew search "packagename"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Package updates aviable for "packagenames".</p>
+                        </div>
+                     </div>
+                </div>
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>list</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>list is used in the case we would like to display a list of all packages currently installed on your system. This is useful for checking what software you have installed via Homebrew, along with any versions or dependencies.</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">list</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> brew list </p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">ack <br> autoconf <br>autojump <br>automake <br>coreutils <br>... </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+            <address class="row appear mt-5">Page written by Ayman El Khadiri</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: " Which command is used to update packages installed that didn't come with brew's basic packages?",
+                options: ["upgrade", "update"],
+                correct: 1
+            },
+            {
+                question: " Brew and Homebrew aren't the same package manager.",
+                options: ["True", "False"],
+                correct: 1
+            },
+            {
+                question: " The upgrade command is used only to update the pre-installed packages of homebrew. ",
+                options: ["True", "False"],
+                correct: 0
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sweetmoreton Beryl">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>touch - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+
+    <custom-navbar></custom-navbar>
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="touch">touch</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The <strong><u>touch</u></strong> command is primarily used to create empty files and update the
+                    timestamps of existing files.
+                </p>
+                <p>This command doesn't give an output but it generates a message in case of an error.
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    touch <span class="text-warning"> [option]</span> <span class="text-primary"> file</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>Creating Files:</strong> The <strong>touch</strong> command is commonly used to
+                            create empty files. When this command run in order to create a new file, there is no return
+                            output in the terminal except in cases of error.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> touch newfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>Updating Timestamps:</strong> If the specified file already exists,
+                            <strong>touch</strong> updates its access and modification timestamps to the current time.
+                            This command updates the timestamps of a file to the current date and time. There will be
+                            <strong>no output</strong> in the terminal. The command completes silently.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> touch newfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-a</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Updates only the access time of the file, leaving the modification time unchanged.</p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> touch -a myfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                        <p>Example: Before and After Timestamps</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> stat myfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                > -rw-r--r-- 1 user user 0 Nov 16 09:00 myfile.txt
+                            </p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                > touch -a myfile.txt <br>
+                                > stat myfile.txt <br>
+                            </p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                > -rw-r--r-- 1 user user 0 Nov 16 09:05 myfile.txt
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-t</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>You can set a specific timestamp using the <strong>-t</strong> option followed by a timestamp
+                            in the
+                            format ; YYYYMMDDhhmm. Creates the file if it doesn't exist. No output unless there's an
+                            error.
+                        </p>
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> touch -t 202301011200.00 newfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-m</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Updates only the modification time of the file, leaving the access time unchanged </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> touch -m myfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-r</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>You can also use another file's timestamp as a reference with the <strong>-r</strong> option.
+                            This
+                            command sets the timestamps of a file to match those of another. If
+                            <strong>referencefile.txt</strong>
+                            does not exist, the command will return an error, indicating that the reference file cannot
+                            be found.
+                        </p>
+                        <p>Example(Before and After): </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> stat referencefile.txt
+                                <br>> -rw-r--r-- 1 user user 0 Nov 15 10:00 referencefile.txt
+                                <br>> stat targetfile.txt
+                                <br>> -rw-r--r-- 1 user user 0 Nov 16 09:00 targetfile.txt
+                            </p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                <br>> touch -r referencefile.txt targetfile.txt
+                                <br>> stat referencefile.txt
+                                <br>> -rw-r--r-- 1 user user 0 Nov 15 10:00 referencefile.txt
+                                <br>> stat targetfile.txt
+                                <br>> -rw-r--r-- 1 user user 0 Nov 15 10:00 targetfile.txt
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar"
+                                        style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link" for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link" for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link" for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link" for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link" for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Sweetmoreton Beryl</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: " What does the command touch newfile.txt do?",
+                options: ["It updates the timestamp of newfile.txt if it exists, and creates an empty file if it does not exist.", "It updates the modification timestamp of newfile.txt to the current date and time, but does not create it if it doesn't exist.", " It only creates the file newfile.txt if it doesn't exist, without updating timestamps."],
+                correct: 0
+            },
+            {
+                question: "What does the command touch -a myfile.txt do?",
+                options: [" It updates only the modification time of myfile.txt and leaves the access time unchanged.", "It updates only the access time of myfile.txt and leaves the modification time unchanged.", "It creates myfile.txt if it doesn't exist and updates both timestamps."],
+                correct: 1
+            },
+            {
+                question: "What happens when you run touch -c nonexistentfile.txt",
+                options: [" The command creates nonexistentfile.txt and updates its timestamps.", "The command creates nonexistentfile.txt but does not update its timestamps", " The command prevents nonexistentfile.txt from being created, and does not produce an error message."],
+                correct: 2
+            },
+            {
+                question: " What does the command touch -t 202301011200.00 newfile.txt do?",
+                options: ["It sets the timestamp of newfile.txt to January 1, 2023, at 12:00 AM.", "It sets the timestamp of newfile.txt to January 1, 2023, at 12:00 PM.", "It creates newfile.txt and sets its timestamp to January 1, 2023, at 12:00 PM."],
+                correct: 1
+            },
+
+            {
+                question: "What does the command touch -r referencefile.txt targetfile.txt do??",
+                options: ["It copies the contents of referencefile.txt into targetfile.txt.", "It sets the timestamps of targetfile.txt to match those of referencefile.txt.", " It creates targetfile.txt using the timestamp of referencefile.txt."],
+                correct: 1
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+
+</body>
+
+</html>

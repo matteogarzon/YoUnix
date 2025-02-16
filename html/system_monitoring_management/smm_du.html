@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Davide Soardi">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>du - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="du">du</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The <strong><u>du</u></strong> (disk usage) command is a utility used to <u><strong>estimate and display the amount of disk space</u></strong> used by files or directories. It helps users understand the size of directories and files in the file system, making it useful for identifying disk usage patterns and managing storage space.
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    du <span class="text-warning"> [option]</span> <span class="text-primary"> [file/directory]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>
+                            -h
+                        </h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            Displays sizes in a human-readable format (e.g., KB, MB, GB).
+                        </p>
+
+                        <p>Example 1: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>du -h</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                    60K	./file_permission_ownership<br>
+                                    56K	./file_content_viewing_editing<br>
+                                    144K	./networking<br>
+                                    12K	./other<br>
+                                    44K	./file_directory_management<br>
+                                    320K	./system_monitoring_managment<br>
+                                    92K	./package_management<br>
+                                    88K	./text_processing<br>
+                                    76K	./compressing_archiving<br>
+                                    76K	./environment_management<br>
+                                    0B	./user_group_management<br>
+                                    992K	.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-s</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            Summarizes the total disk usage of the specified file or directory instead of listing each subdirectory.
+                        </p>
+
+                        <p>Example 2: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>du -h -s</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                992K	.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-c</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            Displays a grand total of all disk usage at the end of the output.
+                        </p>
+
+                        <p>Example 3: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>du -h -c</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                    60K	./file_permission_ownership<br>
+                                    56K	./file_content_viewing_editing<br>
+                                    144K	./networking<br>
+                                    12K	./other<br>
+                                    44K	./file_directory_management<br>
+                                    320K	./system_monitoring_managment<br>
+                                    92K	./package_management<br>
+                                    88K	./text_processing<br>
+                                    76K	./compressing_archiving<br>
+                                    76K	./environment_management<br>
+                                    0B	./user_group_management<br>
+                                    988K	.<br>
+                                    988K	total
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-d</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            -d [Num] specifies the depth of directories to include in the output. For example, <code>-d 1</code> lists the size of the specified directory and its immediate subdirectories.
+                        </p>
+
+                        <p>Example 4: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>du -h -d 0</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                988K	.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+             <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-a</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                             Includes all files in the output, not just directories.
+                        </p>
+
+                        <p>Example 5: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>uname -h -a</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                12K	./.DS_Store<br>
+                                12K	./file_permission_ownership/fpo_chattr.html<br>
+                                24K	./file_permission_ownership/fp_chmod.html<br>
+                                12K	./file_permission_ownership/fpo_setfac1.html<br>
+                                12K	./file_permission_ownership/fpo_getfac1.html<br>
+                                0B	./file_permission_ownership/fpo_chmod.html<br>
+                                60K	./file_permission_ownership<br>
+                                20K	./file_content_viewing_editing/fcve_cat.html<br>
+                                12K	./file_content_viewing_editing/fcve_wc.html<br>
+                                12K	./file_content_viewing_editing/fcve_diff.html<br>
+                                12K	./file_content_viewing_editing/fcve_comm.html<br>
+                                56K	./file_content_viewing_editing<br>
+                                16K	./networking/n_traceroute.html, ...
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Davide Soardi</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "What is the primary purpose of the du command?",
+                options: ["To delete files and directories", "To display disk usage of files and directories", "To check the free disk space on the system", "To display file permissions"],
+                correct: 1
+            },
+            {
+                question: "Which option for du makes the output easier to read by displaying sizes in KB, MB, or GB?",
+                options: ["-h", "-s", "-d", "-a"],
+                correct: 0
+            },
+            {
+                question: "If you want to display only the total disk usage of a directory (without listing subdirectories), which option should you use?",
+                options: ["-h", "-d", "-s", "-c"],
+                correct: 2
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

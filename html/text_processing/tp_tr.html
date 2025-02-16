@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Luca Fusetti">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>tr - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="tr">tr</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    <strong><u>tr</u></strong> <strong><u>(Translate)</u></strong> is a Unix command-line tool used for translating, deleting, and squeezing characters from standard input. It's great for quick text transformations, such as converting lowercase to uppercase or removing unwanted characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    tr <span class="text-warning"> [option]</span> <span class="text-primary"> [string]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-d</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-d (delete characters)</strong>: Deletes the specified characters from the input.
+                        </p>
+
+                        <p>Example 1: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> echo "Hello World" | tr -d "o"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Hell Wrld </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-s</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-s (squeeze repeated characters)</strong>: Replaces sequences of repeated characters with a single instance.
+                        </p>
+
+                        <p>Example 2: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> echo "Hellooo   World" | tr -s "o "</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Hello World </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-c</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-c (complement)</strong>: Matches and operates on all characters except the specified set.
+                        </p>
+
+                        <p>Example 3: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> echo "123abc" | tr -c "a-z" "*"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">***abc*% </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>[:upper:] and [:lower:]</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>[:upper:] and [:lower:] (case conversion)</strong>: Converts all uppercase letters to lowercase, or vice versa.
+                        </p>
+
+                        <p>Example 4: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> echo "Hello World" | tr '[:lower:]' '[:upper:]'</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">HELLO WORLD </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-t</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-t (truncate set1)</strong>: Truncates the first set to the length of the second set.
+                        </p>
+
+                        <p>Example 5: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> echo "abcdef" | tr -t "abc" "XYZ"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">XYZdef </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>Character Ranges</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>Character Ranges (e.g., a-z, 0-9)</strong>: Specifies a range of characters to translate.
+                        </p>
+
+                        <p>Example 6: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> echo "abcdef" | tr "a-f" "1-6"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">123456 </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-D</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-D (delete non-matching characters)</strong>: Specifies a range of characters to translate.
+                        </p>
+
+                        <p>Example 7: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> echo "Unix123" | tr -D "a-zA-Z"</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Unix </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>Translating Tabs to Spaces</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>Translating Tabs to Spaces</strong>: Replaces tabs with spaces for formatting text.
+                        </p>
+
+                        <p>Example 8: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> echo -e "Column1\tColumn2" | tr "\t" " "</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Column1 Column2 </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Luca Fusetti</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "Which option in tr deletes specified characters?",
+                options: ["-s", "-d", "-t", "-c"],
+                correct: 1 
+            },
+            {
+                question: "The tr command can be used to convert uppercase letters to lowercase.",
+                options: ["True", "False"],
+                correct: 0
+            },
+            {
+                question: "Which option in tr squeezes repeated characters?",
+                options: ["-c", "-t", "-s", "-d"],
+                correct: 2
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

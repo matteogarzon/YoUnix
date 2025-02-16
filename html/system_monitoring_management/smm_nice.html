@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Emily Pable">
+
+    <!-- links -->
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- title -->
+    <title>nice - YoUnix</title>
+</head>
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <!-- command title -->
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="nice">nice</h1>
+    </div>
+
+    <!-- main -->
+    <div class="main-container">
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>The <strong><u>nice</u></strong> command in Unix is used to start a process with a specified priority, helping manage system resources by adjusting CPU priority levels.</p>
+                <p><strong><u>nice</u></strong> can prevent a single process from monopolizing CPU resources.</p>
+            </div>
+        </div>
+
+        <!-- synopsis -->
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span> nice <span class="text-warning"> [option]</span> <span class="text-primary"> [command]</span> </span>
+            </div>
+        </div>
+
+        <!-- options with examples (examples found on geeksforgeeks or made by chatgpt)-->
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <!-- option 1: -n -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-n</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>The <strong>-n</strong> option sets a niceness value for the command, with higher values meaning lower priority.</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box"><p class="shell-window-top-text">-zsh</p></div>
+                            </div>
+                            <p class="shell-window-bottom-box">> nice -n 10 your_command</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">This command runs "your_command" with a niceness value of 10.</p>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- option 2: adjustment -->
+                    <div class="row appear align-items-start">
+                        <div class="col text-center">
+                            <h3>adjustment</h3>
+                        </div>
+                        <div class="col-10">
+                            <p>Changes the niceness by an adjustment. Positive values reduce priority, negative values increase it.</p>
+                            <p class="text-center">Example:</p>
+                            <div class="d-flex justify-content-center">
+                                <div class="shell-window">
+                                    <div class="shell-window-top-box">
+                                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                        <div class="shell-window-top-text-box"><p class="shell-window-top-text">-zsh</p></div>
+                                    </div>
+                                    <p class="shell-window-bottom-box">> nice -adjustment 5 your_command</p>
+                                    <hr class="shell-divider">
+                                    <p class="shell-window-bottom-box text-secondary">
+                                        This command runs "your_command" with a niceness adjustment of 5.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- option 3: priority value -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>priority value</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Directly sets a priority value, generally between -20 (highest) and 19 (lowest).</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box"><p class="shell-window-top-text">-zsh</p></div>
+                            </div>
+                            <p class="shell-window-bottom-box">> nice -10 your_command</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">This command runs "your_command" with a priority value of -10.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- quiz -->
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+                <div class="bg-dark text-white card mb-4">
+                    <div class="card-body">
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of 4</span>
+                            </div>
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- answer options -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white" aria-current="true">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="option1">
+                                        <label class="form-check-label stretched-link" for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="option2">
+                                        <label class="form-check-label stretched-link" for="option2">Option 2</label>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="option3">
+                                        <label class="form-check-label stretched-link" for="option3">Option 3</label>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="option4">
+                                        <label class="form-check-label stretched-link" for="option4">Option 4</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+            </div>
+            <address class="row appear mt-5">Page written by Emily Pable</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <!-- JavaScript -->
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+
+    <!-- quiz questions data -->
+    <script>
+        const questions = [
+            {
+                question: "What is the default niceness value for a command run with nice?",
+                options: ["10", "0", "5", "-5"],
+                correct: 1
+            },
+            {
+                question: "How do you set a command to run with a niceness of 10?",
+                options: ["nice -n -10 command", "nice -n 10 command", "nice 10 command", "sudo nice -n 10 command"],
+                correct: 1
+            },
+            {
+                question: "Which niceness value gives a command higher priority?",
+                options: ["10", "0", "-10", "20"],
+                correct: 2
+            },
+            {
+                question: "How would you run a process with minimal CPU impact on the system?",
+                options: ["nice -n 0 command", "nice -n -5 command", "nice -n 19 command", "sudo nice -n -10 command"],
+                correct: 2
+            }
+        ];
+        startQuiz(questions);
+    </script>
+</body>
+
+</html>

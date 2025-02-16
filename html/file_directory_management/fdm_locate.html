@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gokhan YILMAZ">
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>locate - YoUnix</title>
+</head>
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="locate">locate</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>The <b><u>locate</u></b> command is used to quickly search for files and directories by querying a pre-built database of filesystem entries. It's faster than <a href="../text_processing/tp_find.html">find</a>, but may require database updates to reflect recent changes in the filesystem.</p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Syntax</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>locate <span class="text-warning">[options]</span> <span class="text-primary">pattern</span></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-i</h3>
+                    </div>
+                    <div class="col-10">
+                        <p>Ignore case dinstictions when matching patterns. However, by using <code>-I</code>, the search becomes case-insensitive, meaning it will match files regardless of whether the letters are uppercase or lowercase.</p>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-c</h3>
+                    </div>
+                    <div class="col-10">
+                        <p>Count the number of matching entries instead of listing them.</p>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-r</h3>
+                    </div>
+                    <div class="col-10">
+                        <p>Allows you to use regular expressions to search for files or directories with the locate command. This gives you more flexibility in your search patterns, as regular expressions can be used to match complex patterns in filenames.</p>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>--limit=N</h3>
+                    </div>
+                    <div class="col-10">
+                        <p>Limit the number of results returned to N entries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Examples</h2>
+            </div>
+            <div class="col-10 d-flex align-items-center flex-column">
+                <p>Example 1:</p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text">-zsh</p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> locate -r '\.(txt|md)$'
+                    </p>
+                    <hr class="shell-divider">
+                    <p class="shell-window-bottom-box">
+                       file1.txt<br>
+                        file2.md<br>
+                        This command will list all files that end with either .txt or .md.
+                    </p>
+                </div>
+
+                <p>Example 2:</p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text">-zsh</p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> locate -c config</p>
+                    <hr class="shell-divider">
+                    <p class="shell-window-bottom-box">42<br>This displays the total count of entries matching "config".</p>
+                </div>
+
+                <p>Example 3:</p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text">-zsh</p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> locate --limit=5 config</p>
+                    <hr class="shell-divider">
+                    <p class="shell-window-bottom-box">
+                        /home/user/config.ini<br>
+                        /etc/config.yaml<br>
+                        Only the first 5 matches are displayed.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+                <div class="bg-dark text-white card mb-4">
+                    <div class="card-body">
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                           
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+            </div>
+            <address class="row appear mt-5">Page written by Gokhan YILMAZ</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+        {
+                question: "How can you count the number of matching entries?",
+                options: ["Using -i", "Using -c"],
+                correct: 1
+            },
+            {
+                question: "How can you ignore case while searching?",
+                options: ["Using -I", "Using -i"],
+                correct: 1
+            },
+            {
+                question: "How can you limit the results to N entries?",
+                options: ["Using --limit=N", "Using -c"],
+                correct: 0
+            }
+        ];
+        startQuiz(questions);
+    </script>
+</body>
+
+</html>

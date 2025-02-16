@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Agon Rysha">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>pip - YoUnix</title>
+</head>
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <!-- Title Section -->
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="pip">pip</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        
+        <!-- Usage Section -->
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>The <strong><u>pip</u></strong> command is used to <strong><u>install, manage, and uninstall Python packages</u></strong> from the Python Package Index and other indexes. It is the default package manager for Python.</p>
+                <p>It also known by Python 3's alias pip3.</p>
+            </div>
+        </div>
+
+        <!-- Synopsis Section -->
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>pip <span class="text-warning">[command]</span> <span class="text-primary">[option]</span></span>
+            </div>
+        </div>
+
+        <!-- Options Section -->
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Commands</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <!-- Option: install -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>install</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>The install command installs a Python package.</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">install</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> pip install requests</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option: uninstall -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>uninstall</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>The uninstall command removes a Python package.</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">uninstall</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> pip uninstall requests</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option: list -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>list</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>The list command shows all installed Python packages.</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">list</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> pip list</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Package    Version <br>
+                                ---------- ------- <br>
+                                altgraph   0.17.2 <br>
+                                future     0.18.2 <br>
+                                pip        21.2.4 <br>
+                                setuptools 58.0.4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+            
+            <address class="row appear mt-5">Page written by Agon Rysha</address>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <custom-footer></custom-footer>
+
+    <!-- External JavaScript files -->
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+
+    <!-- Inline JavaScript for Quiz -->
+    <script>
+        const questions = [
+            {
+                question: "What does 'pip install requests' do?",
+                options: ["Installs the requests package.", "Removes the requests package.", "Lists installed packages."],
+                correct: 0
+            },
+            {
+                question: "Which command lists all installed Python packages?",
+                options: ["pip uninstall", "pip list", "pip install"],
+                correct: 1
+            },
+            {
+                question: "Can you uninstall a package with pip?",
+                options: ["Yes, using pip uninstall.", "No, pip can only install packages."],
+                correct: 0
+            }
+        ];
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<hmtl lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Elena Hu">
+        <title>History of Unix Shell - YoUnix</title>
+        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body id="history">
+        <custom-navbar></custom-navbar>
+
+        <div class="special-bg" id="TP">
+            <h2 class="h1-history typing-history">
+                &nbsp;&nbsp;&nbsp;There is a man called
+                <a href="https://en.wikipedia.org/wiki/Ken_Thompson" class="a-change-style">
+                    Ken Thompson...
+                </a>
+            </h2>
+        </div>
+
+        <h2 class="h1-history wide-letter" style="margin-bottom: 50px;"> <a href=#TL class="a-change-style"> &#8964;
+            </a> </h2>
+
+        <div class="timeline" id="TL">
+
+            <div class="timeline-event right">
+                <div class="content hover-container">
+                    <h2>
+                        The history of Unix starts with Ken Thompson
+                    </h2>
+                    <div class="hover-content right">
+                        <img src="../assets/history/KT2.jpeg" alt="Ken Thompson's foto">
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event left">
+                <div class="content hover-container">
+                    <h2>
+                        1969 - Creation of Unix
+                    </h2>
+                    <div class="hover-content left">
+                        <ul class="typinginblock">
+                            <li>
+                                Ken Thompson at Bell Labs creates Unix as a multi-user, multitasking operating system
+                                for the PDP-7.
+                            </li>
+                            <li>
+                                Early versions of Unix had no shell in the modern sense. Instead, commands were typed
+                                directly to the system, which interacted through a simple, custom interface.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event right">
+                <div class="content hover-container">
+                    <h2>
+                        1971 - Thompson Shell (sh)
+                    </h2>
+                    <div class="hover-content right">
+                        <ul class="typinginblock">
+                            <li>
+                                The first Unix shell, known as the Thompson Shell, is developed by Ken Thompson.
+                            </li>
+                            <li>
+                                This shell allowed users to interact with the Unix system by entering commands via a
+                                terminal interface, though it was still primitive compared to what would come later.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event left">
+                <div class="content hover-container">
+                    <h2>
+                        1973 - Introduction of the Bourne Shell (sh)
+                    </h2>
+                    <div class="hover-content left">
+                        <ul class="typinginblock">
+                            <li>
+                                Stephen Bourne at Bell Labs develops the Bourne Shell (often called sh), which replaces
+                                the Thompson Shell.
+                            </li>
+                            <li>
+                                The Bourne Shell introduced scripting features like variables, control structures (if,
+                                loops), and redirection.
+                            </li>
+                            <li>
+                                It became the standard shell in many Unix systems and is still the basis for many modern
+                                shells.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event right">
+                <div class="content hover-container">
+                    <h2>
+                        1978 - Version 7 Unix
+                    </h2>
+                    <div class="hover-content right">
+                        <ul class="typinginblock">
+                            <li>
+                                Unix Version 7 (V7) is released, becoming a widely adopted version of Unix.
+                            </li>
+                            <li>
+                                The Bourne Shell continues to be the primary shell in Unix systems, with improvements
+                                over time.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event left">
+                <div class="content hover-container">
+                    <h2>
+                        1980 - C Shell (csh)
+                    </h2>
+                    <div class="hover-content left">
+                        <ul class="typinginblock">
+                            <li>
+                                Bill Joy at UC Berkeley creates the C Shell (csh), which was influenced by the C
+                                programming language.
+                            </li>
+                            <li>
+                                csh introduces job control (suspending and backgrounding processes) and history
+                                features, making it a more interactive user environment than the Bourne Shell.
+                            </li>
+                            <li>
+                                It also introduces the csh scripting language, which had its own syntax distinct from
+                                the Bourne Shell.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event right">
+                <div class="content hover-container">
+                    <h2>
+                        1983 - Korn Shell (ksh)
+                    </h2>
+                    <div class="hover-content right">
+                        <ul class="typinginblock">
+                            <li>
+                                David Korn, also at Bell Labs, develops the Korn Shell (ksh), a major enhancement over
+                                the Bourne Shell.
+                            </li>
+                            <li>
+                                The Korn Shell combines features from the Bourne Shell and C Shell, adding features like
+                                command-line editing, job control, and functions.
+                            </li>
+                            <li>
+                                It became very popular due to its combination of scripting capabilities and interactive
+                                features.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event left">
+                <div class="content hover-container">
+                    <h2>
+                        1989 - Bash Shell (Bourne Again Shell)
+                    </h2>
+                    <div class="hover-content left">
+                        <ul class="typinginblock">
+                            <li>
+                                Brian Fox writes the Bash Shell (bash), which is intended to be a free and open-source
+                                replacement for the Bourne Shell.
+                            </li>
+                            <li>
+                                Bash combines features of the Bourne Shell, C Shell, and Korn Shell, and adds its own
+                                improvements such as command-line editing (using Emacs or vi key bindings) and tab
+                                completion.
+                            </li>
+                            <li>
+                                Bash quickly becomes the default shell for many Linux distributions and macOS.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event right">
+                <div class="content hover-container">
+                    <h2>
+                        1990s - Evolution of Shells in Linux and Other Unix Variants
+                    </h2>
+                    <div class="hover-content right">
+                        <ul class="typinginblock">
+                            <li>
+                                Linux and other Unix variants, such as FreeBSD and NetBSD, popularize Bash as the
+                                default shell.
+                            </li>
+                            <li>
+                                Other shells like Zsh (developed in 1990 by Paul Falstad) and Fish (Friendly Interactive
+                                Shell) introduce more advanced features, such as improved autocompletion, syntax
+                                highlighting, and user-friendly prompts.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event left">
+                <div class="content hover-container">
+                    <h2>
+                        2000s - Continued Growth and Customization
+                    </h2>
+                    <div class="hover-content left">
+                        <ul class="typinginblock">
+                            <li>
+                                Unix and Linux-based systems grow in popularity as servers and desktops, and the Bash
+                                shell solidifies its position as the most widely used shell.
+                            </li>
+                            <li>
+                                Power users start relying on advanced features such as zsh's plugin system, oh-my-zsh
+                                framework, and Fish for its user-friendly syntax and helpful autocompletion features.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event right">
+                <div class="content hover-container">
+                    <h2>
+                        2010s - Shells in Modern Development
+                    </h2>
+                    <div class="hover-content right">
+                        <ul class="typinginblock">
+                            <li>
+                                Zsh becomes increasingly popular, especially among developers and sysadmins. It is
+                                lauded for its customizability, powerful features, and vibrant plugin ecosystem.
+                            </li>
+                            <li>
+                                Bash continues to be a dominant shell in many environments, though new features in
+                                shells like Fish and Zsh start to attract more users.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event left">
+                <div class="content hover-container">
+                    <h2>
+                        2020s - Shells in Modern Operating Systems
+                    </h2>
+                    <div class="hover-content left">
+                        <ul class="typinginblock">
+                            <li>
+                                Zsh is adopted as the default shell on macOS (as of macOS Catalina, released in 2019).
+                            </li>
+                            <li>
+                                Fish gains traction for its user-friendly syntax, great autocompletion, and ease of use
+                                for newcomers.
+                            </li>
+                            <li>
+                                Development tools such as Oh My Zsh and Prezto help users customize and extend their
+                                shell environments, with plugins that streamline development and administration tasks.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event right">
+                <div class="content hover-container">
+                    <h2 class="a-change-style">
+                        To be continued...
+                    </h2>
+                    <div class="hover-content right">
+                        <ul class="typinginblock">
+                            <li>
+                                You can be part of unix history!
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="h1-history wide-letter" style="margin-top: 50px;"> <a href=#TP class="a-change-style"> &Hat; </a>
+        </h2>
+
+        <address style="margin-top: 100px; text-align: center; color: white;">Page written by Elena Hu</address>
+
+        <custom-footer></custom-footer>
+
+        <script src="../../scripts/customElements.js"></script>
+        <script src="../../scripts/search.js"></script>
+        <script>
+            const toggleButton = document.getElementById('toggleButton');
+            const navbar = document.getElementById('navbar');
+
+            toggleButton.addEventListener('click', () => {
+                navbar.classList.toggle('open'); 
+                toggleButton.classList.toggle('shift-right');});
+
+            const menuToggles = document.querySelectorAll('.menu-toggle');
+            menuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(event) {
+                    const dropdownContent = this.nextElementSibling;
+                    dropdownContent.classList.toggle('open');
+                    
+                    const arrow = this.querySelector('.arrow');
+                    if (dropdownContent.classList.contains('open')) {
+                        arrow.textContent = '▲'; 
+                    } else {
+                        arrow.textContent = '▼';
+                    }
+                    event.preventDefault();
+                });
+            });
+        </script>
+    </body>
+</hmtl>

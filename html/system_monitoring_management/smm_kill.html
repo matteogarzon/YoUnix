@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sofia Mamone">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Command title -->
+    <title>kill - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="kill">kill</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The command <strong><u>kill</u></strong> is used to send <strong><u>signals</u></strong> to processes, allowing for their <strong><u>termination</u></strong> or control. The kill command is essential for process management, particularly when a process is unresponsive or needs to be stopped.
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    kill <span class="text-warning"> [OPTION] [PID]</span> <span class="text-primary"> -[SIGNAL] [PID]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+           <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>[PID]</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Sends the default signal <code>SIGTERM</code> that terminates the specified process ([PID] stands for process ID). You can kill multiple processes simultaneously by providing all their PIDs. You can confirm that the process has terminated by running the command <a href="ps.html">ps</a> or <a href="jobs.html">jobs</a>.
+                        </p>
+
+                        <p>Example 1: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> kill 12345</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box text-secondary">No output.</p>
+                        </div>
+                    </div>
+                </div>
+           </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-l</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Lists all available signal that can be sent to processes with their name and associated number.
+                        </p>
+
+                        <p>Example 2: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> kill -l</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">1) SIGHUP      2) SIGINT     3) SIGQUIT    4) SIGILL<br>
+                                                               5) SIGTRAP     6) SIGABRT    7) SIGEMT     8) SIGFPE<br>
+                                                               9) SIGKILL     10) SIGBUS   11) SIGSEGV    12) SIGSYS<br>
+                                                               ...<br>
+                                                               15) SIGTERM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-9 [PID]</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Sends the <code>SIGKILL</code> signal that forcefully kills the process. The <code>SIGKILL</code> signal cannot be caught, ignored, or blocked by the process, making kill -9 highly effective for ending unresponsive or "stuck" processes. You can confirm that the process has ended by running the command <a href="ps.html">ps</a>.
+                        </p>
+
+                        <p>Example 3: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> kill -9 12345</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box text-secondary">No output.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-15 [PID]</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Explicitly sends the default signal to gracefully terminate the process by sending the <code>SIGTERM</code> signal, just like kill [PID]. You can confirm that the process has ended by running the command <a href="ps.html">ps</a>.
+                        </p>
+
+                        <p>Example 4: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> kill -15 12345</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box text-secondary">No output.</p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>killall <br> [process_<br>name]</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Sends the <code>SIGTERM</code> signal to all processes with the specified name. Be cautious when using killall, as it affects all processes with the specified name.
+                        </p>
+
+                        <p>Example 5: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> killall firefox</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box text-secondary">No output.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>pkill [pattern]</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Same function as killall but you get to specify a pattern to follow.
+                        </p>
+
+                        <p>Example 6: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> pkill -f my_script.sh</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box text-secondary">No output.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>xkill</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Forcefully terminates the application by clicking on its window.  It is often used when a graphical application becomes unresponsive and cannot be closed through normal means, such as the window's close button.
+                        </p>
+
+                        <p>Example 7: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> xkill</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box text-secondary">The cursor will change to a cross or a skull icon, indicating that xkill is active and waiting for you to click on a window. Click on any window you want to close. The clicked window will immediately close without any prompt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Sofia Mamone</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "What kind of kill command is kill %1?",
+                options: ["killall [process_name]", "xkill", "kill -l", "kill [pid]"],
+                correct: 3 // index of array (first option = 0, second option = 1, ...). remove this comment when done.
+            },
+            {
+                question: "What is the command kill [pid] similar to?",
+                options: ["kill -l", "pkill [pattern]", "kill -15 [pid]", "xkill"],
+                correct: 2
+            },
+            {
+                question: "Can you terminate all instances of a process named firefox using both killall firefox or pkill firefox?",
+                options: ["Yes", "No"],
+                correct: 0
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

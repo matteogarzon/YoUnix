@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gabriele Siliprandi">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>mkdir - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+
+    <custom-navbar></custom-navbar>
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="mkdir">mkdir</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The <strong><u>mkdir</u></strong> command is used for creating folders super easily.  It can create multiple directories at once as well as set the permissions for the directories. 
+                </p>
+                <p>Note that the user executing this command must have enough permission to create a directory in the parent directory.</p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    mkdir <span class="text-warning"> [option]</span> <span class="text-primary"> directory_name</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Features</h2>
+            </div>
+        
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>With <em>mkdir dir{1..4}</em> it's possible to create multiple directories and list them from 1 to 4 with only one command.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> mkdir -v dir{1..4}</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">dir1 <br> dir2 <br>dir3 <br>dir4</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>With <em>mkdir dir1 dir2</em> it's possible to create two directories with only one command.
+                        </p>
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> mkdir -v  dir_1 dir_2</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">dir_1 <br> dir_2</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-v</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>By using this option a message is provided for each directory that is created.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> mkdir -v dir_1</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">dir_1 </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-m</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>By using this option it's possible to set the permissions for the new directory using a numeric code. The number is characterized by 3 digits.
+                        </p>
+                        <p>The first digit represents the permissions of the owner, the second one the permissions of the group and the last one the permission of Others.
+                        </p>
+                        <p>7= read, write, execute permissions. <br>6= read and write. <br>5= Read and execute. <br>4= read. <br>0= no permission
+                        </p>
+                        <p>Assume that you want to create a folder dir_1 and give all the permissions only to the owner.
+                        </p>
+
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> mkdir -vm 700 dir_1</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">dir_1 </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-p</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>By using this option it's possible to create directory inside the specified path.  
+                        </p>
+                        <p>Assume that you want to create a folder dir_1 in the path <em>/user/home/Document/dir</em> but dir doesn't exist, this command will create dir and then dir_1 inside of it.
+                        </p>
+
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> mkdir -vp /home/user/Document/dir</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">dir <br> dir/dir_1 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+            <address class="row appear mt-5">Page written by Gabriele Siliprandi</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "If you create a folder with the command mkdir -m and use the number 070 for the permissions, who has all the permissions?",
+                options: ["others", "owner", "group"],
+                correct: 2 
+            },
+            {
+                question: "If you want to receive a message for each directory created you can use the command mkdir -v",
+                options: ["True", "False"],
+                correct: 0
+            },
+            {
+                question: "If you have to create 15 directories you must use 15 mkdir commands",
+                options: ["True", "False"],
+                correct: 1
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</div>
+</body>
+
+</html>

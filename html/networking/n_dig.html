@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marianna Dinon Spindola">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>dig  - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        
+        <h1 class="text-center command-title" data-value="dig">dig</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The command <strong><u>dig</u></strong> is a command-line tool used to query DNS (Domain Name System) servers to obtain information about domain names, IP addresses, mail servers, and other DNS records. It is often used for troubleshooting DNS issues and for performing queries to look up domain-related information.
+                </p>
+                <p>When you run <strong>dig</strong> with a domain name or an IP address, it sends a request to the DNS system and then, returns detailed information about the domain's DNS configuration. This includes the associated IP address, mail server settings and other related information. It helps you understand how a domain is set up and whether there are any issues with its DNS configuration.</p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    dig <span class="text-warning"> [option]</span> <span class="text-primary"> [destination]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>+short</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p> The command <strong>+short</strong> simplifies the output, showing only the essential information like an IP address or a simple record. Making it useful when you just need a quick result, like finding an IP address for a domain.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">+short</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> dig +short example.com
+                            </p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">93.184.216.34
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>+noall +answer</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p> The command <strong>+noall +answer</strong> hides all unnecessary details and shows only the answer section, which is especially useful when you're interested only in the final result without all the additional query metadata.
+
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">+noall +answer</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> dig +noall +answer example.com
+                            </p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">example.com.		3600	IN	A	93.184.216.34
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row appear align-items-start">
+                        <div class="col text-center">
+                            <h3>-x</h3>
+                        </div>
+                        <div class="col-10 d-flex align-items-center flex-column">
+                            <p> The command <strong>-x &lt;address&gt;</strong> is used to perform a <strong>reverse</strong> DNS lookup, where you provide an IP address and <strong>dig</strong> queries the DNS system to find the domain name associated with that IP address. This is the reverse of a <strong>normal</strong> DNS lookup (the DNS query resolves a domain name to an IP address), where you query by domain name and get the associated IP address.
+    
+                            </p>
+    
+                            <p>Example: </p>
+                            <div class="shell-window">
+                                <div class="shell-window-top-box">
+                                    <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                    <div class="shell-window-top-text-box">
+                                        <p class="shell-window-top-text">-x &lt;address&gt;</p>
+                                    </div>
+                                </div>
+                                <p class="shell-window-bottom-box">> dig -x 93.184.216.34
+                                </p>
+                                <hr class="shell-divider">
+                                <p class="shell-window-bottom-box"> 34.216.184.93.in-addr.arpa.	3600 IN	PTR	www.example.com</p>
+                                <p class="shell-window-bottom-box text-secondary">("PTR" indicates that a pointer record (PTR record) is returned, which points to the domain name associated with the IP address).</p>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>@&lt;server&gt; </h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p> The command <strong>@&lt;server&gt</strong> allows you to specify a custom DNS server to query instead of using the default DNS server that is configured on your local system. This is a useful feature when you want to test DNS resolution from a specific DNS server or if you are troubleshooting DNS-related issues and need to query a particular server for the records of a domain.
+
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text"> @&lt;server&gt </p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> dig @8.8.8.8 example.com
+                            </p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> ;  DiG 9.16.1-Ubuntu  @8.8.8.8 example.com <br>
+                                <br>
+                                example.com.		3600	IN	A	93.184.216.34
+                                
+                                
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="row appear align-items-start">
+                <div class="col text-center">
+                    <h3>+trace </h3>
+                </div>
+                <div class="col-10 d-flex align-items-center flex-column">
+                    <p> The command <strong>+trace</strong> allows you to trace the full path to the authoritative DNS server, showing the sequence of DNS servers involved in resolving a domain name.
+
+                    </p>
+
+                    <p>Example: </p>
+                    <div class="shell-window">
+                        <div class="shell-window-top-box">
+                            <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                            <div class="shell-window-top-text-box">
+                                <p class="shell-window-top-text"> +trace </p>
+                            </div>
+                        </div>
+                        <p class="shell-window-bottom-box">> dig +trace example.com
+                        </p>
+                        <hr class="shell-divider">
+                        <p class="shell-window-bottom-box"> @&lt;@&lt;&gt;&gt; DiG 9.16.1-Ubuntu @&lt;@&lt;&gt;&gt; +trace example.com <br>
+                            global options: +cmd <br>
+                                			3600000	IN	NS	a.root-servers.net. <br>
+                                			3600000	IN	NS	b.root-servers.net. <br>
+                                		3600000	IN	NS	c.root-servers.net. <br>
+                                <br>
+                                example.com.		3600	IN	A	93.184.216.34
+                            
+                            
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="row appear align-items-start">
+        <div class="col text-center">
+            <h3> +stats </h3>
+        </div>
+        <div class="col-10 d-flex align-items-center flex-column">
+            <p> The command <strong>+stats</strong> will show statistics about the query, including how long it took to resolve and how many DNS servers were queried.
+
+            </p>
+
+            <p>Example: </p>
+            <div class="shell-window">
+                <div class="shell-window-top-box">
+                    <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                    <div class="shell-window-top-text-box">
+                        <p class="shell-window-top-text"> +stats</p>
+                    </div>
+                </div>
+                <p class="shell-window-bottom-box">> dig +stats example.com
+                </p>
+                <hr class="shell-divider">
+                <p class="shell-window-bottom-box">;; Query time: 45 msec <br>
+                     ;; SERVER: 8.8.8.8#53(8.8.8.8) <br>
+                     ;; WHEN: Tue Nov 14 12:35:00 UTC 2024 <br>
+                     ;; MSG SIZE  rcvd: 65 <br>
+                </p>
+            </div>
+        </div>
+</div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">The dig command can be used to query DNS records.</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">True</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">False</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3"> Only for reverse DNS lookups</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+            </div>
+
+            <address class="row appear mt-5">Page written by Marianna Dinon Spindola</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "The dig command can be used to query DNS records.",
+                options: ["True", "False", "Only for reverse DNS lookups."],
+                correct: 0
+            },
+            {
+                question: "The DNS query time indicates how long it takes for a domain name to be written to a file.",
+                options: ["True", "False"],
+                correct: 1
+            },
+            {
+                question: "The @<server> option in the dig command allows you to specify which DNS server to query.",
+                options: ["True", "False"],
+                correct: 0
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sweetmoreton Beryl">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>cat - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="cat">cat</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The <strong><u>cat</u></strong> command is primarily used to concatenate(link together) and display the contents of files.
+                    <strong><u>It is useful for viewing file contents, combining files, and creating new files.</u></strong>
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    cat <span class="text-warning">[option]</span> <span class="text-primary">file</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="row appear align-items-start">
+                <div class="col text-center">
+                    
+                </div>
+                <div class="col-10 d-flex align-items-center flex-column">
+                    <p>
+                        <strong>Displaying File Contents:</strong> the <strong><u>cat</strong></u> command displays the contents of a file to the terminal. E.g <strong><u>(cat file1.txt)</strong></u> This command displays the contents of file1.txt.
+                    </p>
+
+                    <p>Example:</p>
+                    <div class="shell-window">
+                        <div class="shell-window-top-box">
+                            <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                            <div class="shell-window-top-text-box">
+                                <p class="shell-window-top-text">-zsh</p>
+                            </div>
+                        </div>
+                        <p class="shell-window-bottom-box">> cat file1.txt</p>
+                        <hr class="shell-divider">
+                        <p class="shell-window-bottom-box">Hello, this is file1.txt! It contains some text data. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-n</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                        <strong>Number Lines</strong>: adds line numbers to each line of output. <strong><u>(cat -n file1.txt)</strong></u> This command displays file1.txt with each line numbered.
+                        </p>
+
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> cat -n file1.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"><br>1  Hello, this is file1.txt!</br>
+                                2  This file has multiple lines.
+                                <br>3  Each line will be numbered.</br>
+                                
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-e</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            <strong>Show End of Line:</strong> shows $ at the end of each line. <strong><u>(cat -e file1.txt)</strong></u> This command displays file1.txt with $ marking each line end.
+
+                        </p>
+
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> cat -e file1.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"><br>Hello, this is file1.txt$</br>
+                                This file has multiple lines$
+                                <br>Each line will end with a dollar sign$ </br>
+                                
+                                
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3> > </h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>Creating New Files:</strong> when you run the command in a terminal, it opens the file for writing. After running this command, you'll be able to type text into the terminal, and it will be saved.</p>
+                        <p><code>cat > newfile.txt</code>: this command creates a new file named newfile.txt and allows you to type content. Press Ctrl+D to save and exit.</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text"> -zsh </p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> cat > newfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Hello, this is a text file! I am writing some text into the file.</p>
+                        </div>
+                       
+                        <p>After pressing Ctrl D, the file <strong>newfile.txt</strong> contains:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> </p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Hello, this is a text file!
+                                I am writing some text into the file.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                       
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            <strong>Concatenating Files:</strong> you can use <strong><u>cat</strong></u> to concatenate multiple files into a single output or to create a new file <strong><u>(cat file1.txt file2.txt > combined.txt).</strong></u> This command concatenates file1.txt and file2.txt, writing the combined content into combined.txt.
+                            
+                        </p>
+
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> cat file1.txt file2.txt > combined.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> <br>This is the first file.</br>
+                                It has some text.
+                                <br>This is the second file.<br>
+                                It also has some text.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Sweetmoreton Beryl</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "What happens when you run 'cat file1.txt'?",
+                options: [" It concatenates file1.txt with other files and displays the result.", " It displays the content of file1.txt in the terminal.", " It creates an empty file named file1.txt."],
+                correct: 1 // It displays the content of file1.txt in the terminal. 
+            },
+            {
+                question: "What does 'cat -n file1.txt' display if file1.txt is empty?",
+                options: ["file1.txt with line numbers starting from 1.", "An error message", "Nothing at all."],
+                correct: 2 // Nothing at all (since there are no lines to display).
+            },
+            {
+                question: " How would you create a new file called newfile.txt and type into it using cat?",
+                options: ["cat newfile.txt", "cat > newfile.txt", "cat file1.txt > newfile.txt"],
+                correct: 1 // cat > newfile.txt will create the new file and allow you to type into it.
+            },
+            {
+                question: " What happens when you run 'cat file1.txt file2.txt > combined.txt' and combined.txt already has content?",
+                options: ["The command will rename combined.txt to something else.", "The command will show an error because combined.txt already exists.", "The command will overwrite the contents of combined.txt with the contents of file1.txt and file2.txt."],
+                correct: 2 // The command will overwrite the contents of combined.txt with the contents of file1.txt and file2.txt.
+            },
+            {
+                question: "What does 'cat -e' help you detect when viewing a file?.",
+                options: ["Trailing spaces at the end of lines.", "Extra lines in the file.", "Line numbers in the file."],
+                correct: 0 // It helps you detect trailing spaces at the end of lines.
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Emily Pable">
+
+    <!-- links -->
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <title>renice - YoUnix</title>
+</head>
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="renice">renice</h1>
+    </div>
+
+    <!-- main -->
+    <div class="main-container">
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The <strong><u>renice</u></strong> command in Unix/Linux is used to alter the priority (niceness) of an existing process. Like nice, the niceness value ranges from -20 (highest priority) to +19 (lowest priority). renice is typically used when a process needs to be deprioritized or given more CPU resources after it has started.
+                </p>
+            </div>
+        </div>
+
+        <!-- synopsis -->
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span> renice <span class="text-warning"> [-n | -p | -u | -g ...]</span></span>
+            </div>
+        </div>
+
+        <!-- options with examples -->
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <!-- option 1: change niceness of a single process by PID -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>Changing niceness by PID</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Adjusts the niceness of a specific process by providing its process ID (PID).</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box"><p class="shell-window-top-text">-zsh</p></div>
+                            </div>
+                            <p class="shell-window-bottom-box">> renice -n 10 -p 1234</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Changes the niceness of process <code>1234</code> to 10, lowering its priority</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- option 2: change niceness of multiple processes by PID -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>Changing niceness of multiple processes</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Adjusts the niceness of several processes by specifying multiple PIDs.</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box"><p class="shell-window-top-text">-zsh</p></div>
+                            </div>
+                            <p class="shell-window-bottom-box">> renice -n 15 -p 1234 5678</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Changes the niceness of processes <code>1234</code> and <code>5678</code> to 15, lowering their priority</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- option 3: change niceness by user -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>Changing niceness by user</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Adjusts the niceness of all processes owned by a specific user.</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box"><p class="shell-window-top-text">-zsh</p></div>
+                            </div>
+                            <p class="shell-window-bottom-box">> renice -n 5 -u john</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Changes the niceness of all processes owned by user <code>john</code> to 5, increasing priority</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- option 4: change niceness by group -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>Changing niceness by group</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Adjusts the niceness of all processes associated with a specific group ID (GID).</p>
+                        <p>Example:</p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box"><p class="shell-window-top-text">-zsh</p></div>
+                            </div>
+                            <p class="shell-window-bottom-box">> renice -n 8 -g 100</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Changes the niceness of all processes in group ID <code>100</code> to 8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- quiz -->
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+                <div class="bg-dark text-white card mb-4">
+
+                    <div class="card-body">
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of 4</span>
+                            </div>
+
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <div class="list-group-item list-group-item-action bg-dark text-white" aria-current="true">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="option1">
+                                        <label class="form-check-label stretched-link" for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="option2">
+                                        <label class="form-check-label stretched-link" for="option2">Option 2</label>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="option3">
+                                        <label class="form-check-label stretched-link" for="option3">Option 3</label>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="option4">
+                                        <label class="form-check-label stretched-link" for="option4">Option 4</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+            </div>
+            <address class="row appear mt-5">Page written by Emily Pable</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <!-- JavaScript -->
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+
+    <!-- quiz questions data -->
+    <script>
+        const questions = [
+            {
+                question: "Which option is used to change the priority of a specific process using its PID?",
+                options: ["-p", "-u", "-g", "-n"],
+                correct: 0
+            },
+            {
+                question: "How do you change the priority of all processes owned by a user?",
+                options: ["renice -n priority -u username", "renice -u username", "renice -p username", "renice -g username"],
+                correct: 0
+            },
+            {
+                question: "Which command would you use to set the niceness of processes for group ID 100 to 8?",
+                options: ["renice -n 8 -g 100", "renice -g 8 -n 100", "renice -u 100 -n 8", "renice -p 100 -n 8"],
+                correct: 0
+            },
+            {
+                question: "How do you adjust the priority of multiple processes with PIDs 1234 and 5678 to 15?",
+                options: ["renice -n 15 -p 1234 5678", "renice -p 15 -n 1234 5678", "renice -u 15 -p 1234 5678", "renice -n -15 1234 5678"],
+                correct: 0
+            }
+        ];
+        startQuiz(questions);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gokhan YILMAZ">
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>wc - YoUnix</title>
+</head>
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="wc">wc</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>The <b><u>wc</u></b> command stands for "<strong><u>word count</u></strong>." It is used to count the number of lines, words, and bytes (or characters) in a file or standard input. This command is particularly useful for obtaining quick statistics about text files.</p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Syntax</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>wc <span class="text-warning">[options]</span> <span class="text-primary">file</span></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-l</h3>
+                    </div>
+                    <div class="col-10">
+                        <p>Count lines only.</p>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-w</h3>
+                    </div>
+                    <div class="col-10">
+                        <p>Count words only.</p>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-c</h3>
+                    </div>
+                    <div class="col-10">
+                        <p>Count bytes only.</p>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-m</h3>
+                    </div>
+                    <div class="col-10">
+                        <p>Count characters (useful for multi-byte character sets).</p>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-L</h3>
+                    </div>
+                    <div class="col-10">
+                        <p>Display the length of the longest line.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Examples</h2>
+            </div>
+            <div class="col-10 d-flex align-items-center flex-column">
+                <p>Example 1:</p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text">-zsh</p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> wc example.txt</p>
+                    <hr class="shell-divider">
+                    <p class="shell-window-bottom-box">
+                        10 150 1024 example.txt (number of lines: 10; words: 150; bytes: 1024)
+                    </p>
+                </div>
+
+                <p>Example 2:</p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text">-zsh</p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> wc -l example.txt</p>
+                    <hr class="shell-divider">
+                    <p class="shell-window-bottom-box">
+                        10 example.txt (number of lines in file example.txt)
+                    </p>
+                </div>
+
+                <p>Example 3:</p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text">-zsh</p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> wc file1.txt file2.txt</p>
+                    <hr class="shell-divider">
+                    <p class="shell-window-bottom-box">
+                        10 150 1024 file1.txt &nbsp;&nbsp;&nbsp;&nbsp; count lines, words, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and bytes<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in file1.txt<br>
+                        20 300 2048 file2.txt &nbsp;&nbsp;&nbsp;&nbsp; count lines, words, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and bytes<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in file2.txt<br>
+                        30 450 3072 total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; count lines, words, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and bytes<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in both files<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar"
+                                        style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link" for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link" for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link" for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link" for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link" for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+            </div>
+            <address class="row appear mt-5">Page written by Gokhan YILMAZ</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+        {
+                question: "How can you display the longest line in a file?",
+                options: ["Using wc -L", "Using wc -l"],
+                correct: 0
+            },
+            {
+                question: "How can you count words in a file?",
+                options: ["Using wc -w", "Using wc -l"],
+                correct: 0
+            },
+            {
+                question: "How can you count lines in a file?",
+                options: ["Using wc -l", "Using wc -c"],
+                correct: 0
+            }
+        ];
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

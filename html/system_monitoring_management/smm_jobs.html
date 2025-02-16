@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sofia Mamone">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Command title -->
+    <title>jobs - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="jobs">jobs</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    <strong><u>jobs</u></strong> is a command which lists <strong><u>all current jobs</u></strong> associated with the terminal, displaying their job IDs and status (running, stopped, etc.). Each job represents a process started in the shell, and the jobs command helps users monitor and manage these processes.
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    jobs <span class="text-warning"> [  -l | -n | -p ]</span> <span class="text-primary"> [ JobID ... ]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>[JOB]</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Lists all current jobs started by the current shell with their job IDs and statuses ([JOB] is the job ID, which corresponds to a name or a number).
+                        </p>
+
+                        <p>Example 1: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> jobs</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">[1]-  Running                 sleep 30 &<br>
+                                                               [2]+  Stopped                 sleep 45 &</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-l</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            Shows process IDs with additional information such as the state and the command that initiated the job. The PID of each job can be useful for managing or debugging specific processes.
+                        </p>
+
+                        <p>Example 2: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> jobs -l</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                [1]-  5713 Running                 sleep 30 &
+                                <br>
+                                                               [2]+  5714 Stopped                 sleep 45 &
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-n</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Shows only the jobs in the current shell session that have had a status change since the last update. This tool is especially helpful for keeping track of job statuses without overwhelming the output with jobs that haven't been altered.
+                        </p>
+
+                        <p>Example 3: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> jobs -n</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">[2]+   Stopped                 sleep 45 &</p>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-p</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Lists only process IDs of the current jobs, without additional information. This is super handy when you need to identify the PIDs of background or paused jobs, especially if you want to manage them further, like using the <a href="kill.html">kill</a> command to end specific jobs.
+                        </p>
+
+                        <p>Example 4: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> jobs -p</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">5713<br>
+                                                               5714</p>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-r</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Shows only running jobs. This excludes any jobs that are stopped or have completed, allowing you to see only actively running jobs.
+                        </p>
+
+                        <p>Example 5: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> jobs -r</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">[1]-   Running                 sleep 30 &</p>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-s</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Shows only stopped or suspended jobs. This excludes running jobs and shows only those that have been paused, usually by a signal like <a href="ctrl+key.html">Ctrl+Z</a>.
+                        </p>
+
+                        <p>Example 6: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> jobs -s</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">[2]+   Stopped                 sleep 45 &</p>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Sofia Mamone</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "The command jobs -n lists only processes that have not changed status since the last notification.",
+                options: ["True", "False"],
+                correct: 1 // index of array (first option = 0, second option = 1, ...). remove this comment when done.
+            },
+            {
+                question: "What jobs command lists all current jobs with their status?",
+                options: ["jobs -n", "jobs -r", "jobs", "jobs -p"],
+                correct: 2
+            },
+            {
+                question: "What does the command jobs -p display?",
+                options: ["Only process IDs of the current jobs, with additional information", "Only process IDs of the current jobs, without additional information", "Status and process IDs of the current jobs", "stopped jobs"],
+                correct: 1
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andrea Benvegnù">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>sed - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="sed">sed</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    <strong><u>sed</u></strong> <strong><u>(Stream Editor)</u></strong> is a text transformation wizard that modifies your text on the fly. Think of it as a mini production line where your text flows through, and sed applies changes as the text passes by – whether it’s replacing words, deleting lines, or inserting new content. It’s your go-to tool for automated text surgery!
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    sed <span class="text-warning"> [OPTIONS]</span> <span class="text-secondary">'SCRIPT'</span> <span class="text-primary"> [INPUTFILE...]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+            <!-- Example option 1 -->
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-i</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-i (in-place)</strong>: Makes changes directly to files, like editing a document with a permanent marker.</p>
+
+                        <p>Example 1: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo "old text" > file.txt <br>
+                                                                > sed -i 's/old/new/' file.txt <br>
+                                                                > cat file.txt <br></p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> new text </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 2 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-e</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-e (expression)</strong>: Allows multiple transformations in one go. </p>
+
+                        <p>Example 2: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo "The old gray dog" > file.txt <br>
+                                                                > sed -e 's/old/young/' -e 's/gray/brown/' file.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> The young brown dog </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 3 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-n</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>-n (quiet)</strong>: Only shows what you specifically ask to see, like a stealth mode for text processing. </p>
+
+                        <p>Example 3: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo -e "Line 1\nLine 2\nLine 3" > file.txt <br>
+                                                                > sed -n '2p' file.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> Line 2 </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 4 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>p</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>p (print)</strong>: Prints specific lines, much like a spotlight operator highlighting exactly what you want. </p>
+
+                        <p>Example 4: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo -e "One\nTwo\nThree" > numbers.txt <br>
+                                                                > sed -n '/Two/p' numbers.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> Two </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 5 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>d</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>d (delete)</strong>: Removes specified lines, imagine it like a paper shredder for specific parts of your text. </p>
+
+                        <p>Example 5: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo -e "Keep\nDelete\nKeep" > file.txt <br>
+                                                                > sed '/Delete/d' file.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> Keep <br> Keep </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 6 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>s/p/r</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>s/pattern/replacement/ (substitute)</strong>: Replaces text patterns, like find-and-replace in a word processor. </p>
+
+                        <p>Example 6: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo "The cat sleeps" > file.txt <br>
+                                                                > sed 's/cat/dog/' file.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> The dog sleeps </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 7 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>a\</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>a\ (append)</strong>: Adds new lines after matches. </p>
+
+                        <p>Example 7: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo "Original line" > file.txt <br>
+                                                                > sed '/Original/a\<br>New line below' file.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> Original line <br> New line below</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example option 8 -->
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>i\</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p><strong>i\ (insert)</strong>: Adds new lines before matches. </p>
+
+                        <p>Example 8: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box"> > echo "Original line" > file.txt <br>
+                                                                > sed '/Original/i\New line above' file.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box"> New line above <br> Original line</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Andrea Benvegnù</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "What's the best way to think about sed's streaming behavior?",
+                options: ["Like a spell checker", "Like a production line where text flows through and gets modified", "Like a text editor", "Like a file manager"],
+                correct: 1 
+            },
+            {
+                question: "When using sed with the -i option, you can undo your changes later.",
+                options: ["True", "False"],
+                correct: 1
+            },
+            {
+                question: "If you want to add a copyright notice at the top of multiple files, which sed command type would be most appropriate?",
+                options: ["delete (d)", "substitute (s)", "insert (i)", " append (a)"],
+                correct: 2
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>

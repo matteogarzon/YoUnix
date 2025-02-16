@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sweetmoreton Beryl">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>head/tail - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+
+    <custom-navbar></custom-navbar>
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="head/tail">head/tail</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The <strong><u>head</u></strong> and <u><strong>tail</u></strong> commands allow users to view
+                    specific sections of a file. <strong><u>head</u></strong> displays the beginning of a file, while
+                    <strong><u>tail</u></strong> shows the end. They are commonly used for quickly previewing files or
+                    monitoring log files in real-time.
+                <p>Multiple options can be used e.g <strong><u>tail -n 20 -f logfile.txt</u></strong>
+                    To return the last 20 lines of a log file.</p>
+                </p>
+
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                head<span class="text-warning"> [option]</span> <span class="text-primary"> file </span> <br>
+                tail<span class="text-warning"> [option]</span> <span class="text-primary"> file</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>head</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>The head <u>command</u> displays the first 10 lines of a file by default
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> head destination_folder/example.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">$ head destination_folder/example.txt
+                                <br>This is the first line of example.txt.
+                                <br>This is the second line of example.txt.
+                                <br>This is the third line of example.txt.
+                                <br>This is the fourth line of example.txt.
+                                <br>This is the fifth line of example.txt.
+                                <br>This is the sixth line of example.txt.
+                                <br>This is the seventh line of example.txt.
+                                <br>This is the eighth line of example.txt.
+                                <br>This is the ninth line of example.txt.
+                                <br>This is the tenth line of example.txt. </br>
+
+                                $
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>tail</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>The tail <u>command</u> displays the last 10 lines of a file by default.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>tail destination_folder/example.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">$ tail destination_folder/example.txt
+                                <br> This is the tenth line of example.txt.
+                                <br>This is the ninth line of example.txt.
+                                <br>This is the eighth last of example.txt.
+                                <br>This is the seventh last of example.txt.
+                                <br>This is the sixth last of example.txt.
+                                <br>This is the fifth last of example.txt.
+                                <br>This is the fourth last of example.txt.
+                                <br>This is the third last of example.txt.
+                                <br>This is the second last line of example.txt.
+                                <br>This is the last line of example.txt.</br>
+                                $
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-n</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Both head and tail allow you to specify the number of lines to display using the
+                            <strong><u>-n</u></strong> option.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> tail -n 5 myfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                This is the fifth last line of example.txt.
+                                <br>This is the fourth last line of example.txt.
+                                <br>This is the third last line of example.txt.
+                                <br>This is the second last line of example.txt.
+                                <br>This is the first last line of example.txt.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>+</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Using <strong>+</strong> with head/tail <strong>-n</strong> allows you to start displaying
+                            from a specific line number. This command starts displaying a file's content from this
+                            number and onward. </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> tail -n +20 myfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                (There are 25 lines totally in this file)
+                                <br /> This is the 20th line.
+                                <br /> This is the 21st line.
+                                <br /> This is the 22nd line.
+                                <br /> This is the 23rd line.
+                                <br /> This is the last line.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-f</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>Using <strong>-f</strong> with head/tail <strong>-f</strong> is useful for monitoring log
+                            files (Log files in Unix are files where the system, applications, and services record
+                            events, errors, and other information.) as they are updated. This command displays the last
+                            10 lines of a file and updates the output in real-time as new lines are added to the file.
+                            To stop monitoring the file, simply press Ctrl + C to terminate the command. This will bring
+                            you back to the regular terminal prompt. </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> tail -f logfile.txt</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">2024-11-16 10:00:01 [INFO] Application started
+                                <br>2024-11-16 10:00:15 [INFO] User logged in: user1
+                                <br>2024-11-16 10:02:00 [ERROR] Failed to load configuration
+                                <br>2024-11-16 10:02:10 [INFO] User logged in: user2
+                                <br>2024-11-16 10:05:00 [INFO] Task completed
+                                <br>2024-11-16 10:06:30 [INFO] User logged out: user1
+                                <br>2024-11-16 10:07:00 [INFO] Application shutdown
+                                <br>2024-11-16 10:10:00 [INFO] Application started
+                                <br>2024-11-16 10:11:00 [INFO] User logged in: user3
+                                <br>2024-11-16 10:12:30 [ERROR] Task execution failed
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row appear">
+                <div class="col">
+                    <h2 class="command-section-title">>Quiz</h2>
+                </div>
+                <div class="col-10">
+
+                    <div class="bg-dark text-white card mb-4">
+                        <!-- Card body -->
+                        <div class="card-body">
+                            <!-- quiz -->
+                            <div class="mt-3">
+                                <div class="d-flex justify-content-between">
+                                    <span id="quiz-progress">Progress:</span>
+                                    <span id="question-number">Question ? out of ?</span>
+                                </div>
+                                <!-- progress bar -->
+                                <div class="mt-2">
+                                    <div class="progress" style="height: 6px">
+                                        <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar"
+                                            style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-5">
+                                <!-- text -->
+                                <h3 class="mb-3" id="question-title">Question Title</h3>
+                                <div class="list-group" id="answer-options">
+                                    <!-- list group item -->
+                                    <div class="list-group-item list-group-item-action bg-dark text-white"
+                                        aria-current="true">
+                                        <!-- form check -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="option1">
+                                            <label class="form-check-label stretched-link" for="option1">Option
+                                                1</label>
+                                        </div>
+                                    </div>
+                                    <!-- list group item -->
+                                    <div class="list-group-item list-group-item-action bg-dark text-white">
+                                        <!-- form check -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="option2">
+                                            <label class="form-check-label stretched-link" for="option2">Option
+                                                2</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- list group item -->
+                                    <div class="list-group-item list-group-item-action bg-dark text-white">
+                                        <!-- form check -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="option3">
+                                            <label class="form-check-label stretched-link" for="option3">Option
+                                                3</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- list group item -->
+                                    <div class="list-group-item list-group-item-action bg-dark text-white">
+                                        <!-- form check -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="option4">
+                                            <label class="form-check-label stretched-link" for="option4">Option
+                                                4</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- list group item -->
+                                    <div class="list-group-item list-group-item-action bg-dark text-white">
+                                        <!-- form check -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="option5">
+                                            <label class="form-check-label stretched-link" for="option5">Option
+                                                5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+                </div>
+
+                <address class="row appear mt-5">Page written by Sweetmoreton Beryl</address>
+            </div>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: " What is the default behavior of the 'head' command?",
+                options: ["It shows the last 20 lines of a file.", " It shows the first 10 lines of a file.", "It shows the entire file."],
+                correct: 1
+            },
+            {
+                question: " What does the -n option do when used with head or tail?",
+                options: ["It shows the number of characters in a file.", " It shows the number of words in a file.", " It specifies how many lines to display from the start (for head) or end (for tail)."],
+                correct: 2
+            },
+            {
+                question: "What does the tail -f command do?",
+                options: ["It displays the last 10 lines of a file and updates the output in real time as new lines are added.", "It shows the last 10 lines of a file and then stops.", "It shows the last 10 lines of a file and then stops."],
+                correct: 0
+            },
+            {
+                question: "Which of the following commands will allow you to monitor a log file and see updates as they happen?",
+                options: ["head -f logfile.txt.", "tail -n 50 -f logfile.txt", " tail -n 10 logfile.txt"],
+                correct: 1
+            } // The tail -n 50 -f logfile.txt command will display the last 50 lines of logfile.txt and then continuously monitor the file, showing new lines as they are added. This is useful for real-time monitoring of logs.
+
+        ]
+
+        startQuiz(questions);
+    </script>
+
+
+</body>
+
+</html>

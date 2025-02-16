@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sweetmoreton Beryl">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>cp - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+
+    <custom-navbar></custom-navbar>
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="cp">cp</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    The <strong><u>cp</u></strong> command is used to create an exact copy of a file or directory and
+                    place it in a specified location, either under a new name or in a different directory. This command
+                    is fundamental when you need to back up files, duplicate files for editing, or move files into
+                    organized directories without losing the original.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    cp <span class="text-warning"> [option]</span> <span class="text-primary"> source_file
+                        target_file/directory</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-r</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>To copy a directory and its contents, you must use the <strong> -r </strong>(or --recursive)
+                            option. For example, <code>cp -r dir1/ dir2/</code> copies the entire <strong>dir1</strong>
+                            directory into <strong>dir2.</strong> You can verify that the directory has been copied by
+                            listing the contents of destination_folder using the <strong>ls</strong>command.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> cp -r source_folder destination_folder</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">> ls destination_folder
+                                <br>> source_folder</br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>If you try to copy a non-existent directory, you'll see an error like this: </p>
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> cp -r source_folder destination_folder</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">cp: source_folder/: No such file or directory
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-i</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>The <strong>-i</strong> option in the <strong>cp</strong> command stands for
+                            <strong>interactive mode</strong>, it's specifically used to prompt you before
+                            overwriting each individual file during the copy operation.
+
+                        <p>When you use <strong>-i</strong>, the command will ask whether you want to overwrite a
+                            file in the destination if a file with the same name already exists. </p>
+                        <p>Your Options:
+                            <br><strong><code>y</code></strong>: Overwrite the file with the one from the
+                            source.<br>
+                            <strong><code>n</code></strong>: Do not overwrite the file, and the command will skip
+                            that file.
+                            If you don't enter anything and just press Return, the default behavior is not to
+                            overwrite (<strong>n</strong> is assumed). The same goes for copying multiple files and
+                            one of them conflicts.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> cp -i source_folder/example.txt destination_folder
+                            </p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">cp: overwrite 'destination_folder/example.txt'? (y/n
+                                [n]):</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-f</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>The <strong>-f</strong> option in the <strong>cp</strong> command stands for
+                            <strong>force</strong> and is used to forcefully overwrite files in the destination
+                            directory without any prompts, even if the file already exists. This means that if
+                            you're copying files and there's a conflict (i.e., a file with the same name already
+                            exists in the destination), the <strong>-f</strong> option will automatically overwrite
+                            the existing file without asking for confirmation.
+                        </p>
+
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> cp -f source_folder destination_folder</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">> ls destination_folder
+                                <br>> source_folder</br>
+                            </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-u</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>The <strong>-u</strong> option in the <strong>cp</strong> command copies only when the source
+                            file is newer than the destination file or when the destination file is missing. When you
+                            use
+                            <strong>cp -u, </strong>
+                            only newer files will be copied, and if the destination file is already up-to-date, it will
+                            not
+                            be overwritten; nothing will happen, and there will be no output (unless there's an error).
+                        </p>
+                        <p>Example: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">> cp -u source_folder destination_folder</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row appear align-items-start">
+            <div class="col text-center">
+                <h3>-v</h3>
+            </div>
+            <div class="col-10 d-flex align-items-center flex-column">
+                <p>The <strong>-v</strong> option in the <strong>cp</strong> <strong>Verbose mode</strong>, which shows
+                    the files being copied, indicating that the copy operation has taken place.
+                </p>
+
+                <p>Example: </p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text">-zsh</p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> cp -v folder1 folder2</p>
+                    <hr class="shell-divider">
+                    <p class="shell-window-bottom-box">folder1 -> folder2
+
+                </div>
+            </div>
+        </div>
+        <div class="row appear align-items-start">
+            <div class="col text-center">
+                <h3>-p</h3>
+            </div>
+            <div class="col-10 d-flex align-items-center flex-column">
+                <p>The <strong>-p</strong> option in the <strong>cp</strong> option can be used to preserve file
+                    attributes
+                    such as timestamps and permissions during the copy process. E.g
+                    <strong><u>cp -p file1.txt file2.txt</u></strong>
+                    This command copies file1.txt to file2.txt while preserving the original file's permissions,
+                    timestamps,
+                    and ownership.
+                </p>
+
+                <p>Example: Check the file attributes before copying</p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text">-zsh</p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> ls -l source_folder/example.txt</p>
+                    <hr class="shell-divider">
+                    <p class="shell-window-bottom-box">> -rw-r--r-- 1 user1 staff 1234 Oct 1 12:34
+                        source_folder/example.txt
+                </div>
+            </div>
+        </div>
+        <div class="row appear align-items-start">
+            <div class="col text-center">
+            </div>
+            <div class="col-10 d-flex align-items-center flex-column">
+
+                <p>Example: Copying with -p</p>
+                <div class="shell-window">
+                    <div class="shell-window-top-box">
+                        <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                        <div class="shell-window-top-text-box">
+                            <p class="shell-window-top-text">-zsh</p>
+                        </div>
+                    </div>
+                    <p class="shell-window-bottom-box">> cp -p source_folder/example.txt destination_folder/</p>
+                    <hr class="shell-divider">
+                    <p class="shell-window-bottom-box">> ls -l destination_folder/example.txt
+                        <br>> -rw-r--r-- 1 user1 staff 1234 Oct 1 12:34 destination_folder/example.txt</pbr>
+                </div>
+            </div>
+        </div>
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar"
+                                        style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link" for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link" for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link" for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link" for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link" for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Sweetmoreton Beryl</address>
+        </div>
+    </div>
+
+        <custom-footer></custom-footer>
+
+        <script src="../../scripts/customElements.js"></script>
+        <script src="../../scripts/search.js"></script>
+        <script src="../../scripts/index.js"></script>
+        <script>
+            const questions = [
+                {
+                    question: "The cp -r option is used to copy directories and their contents recursively.",
+                    options: ["True", "False"],
+                    correct: 0
+                },
+                {
+                    question: "The cp -i command will always overwrite files in the destination without asking for confirmation.",
+                    options: ["True", "False"],
+                    correct: 1
+                },
+                {
+                    question: "The cp -f command will prevent the overwriting of existing files in the destination.",
+                    options: ["True", "False"],
+                    correct: 1
+
+
+                },
+                {
+                    question: "Using cp -u will always overwrite files in the destination, even if the destination file is newer than the source.",
+                    options: ["True", "False"],
+                    correct: 1
+                },
+
+
+                {
+                    question: "The -p option will also preserve the contents of the files when copying.",
+                    options: ["True", "False"],
+                    correct: 1
+                },
+
+                {
+                    question: "The -v option in the cp command is only useful for copying directories.",
+                    options: ["True", "False"],
+                    correct: 1
+                }
+
+            ]
+            startQuiz(questions);
+        </script>
+</body>
+</html>

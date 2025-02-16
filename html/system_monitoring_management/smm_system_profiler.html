@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Davide Soardi">
+
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <title>system_profiler - YoUnix</title>
+</head>
+
+
+<body class="text-white">
+    <custom-navbar></custom-navbar>
+
+    <div class="container-fluid command-title-container">
+        <div class="command-overlay"></div>
+        <h1 class="text-center command-title" data-value="system_profiler">system_profiler</h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-container">
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Usage</h2>
+            </div>
+            <div class="col-10">
+                <p>
+                    This command provides detailed information about your Mac's hardware, software, and network configuration. It <u><strong>generates reports</u></strong> on various aspects of the system, such as CPU, memory, graphics, storage, network connections, and installed applications.
+                </p>
+                <p>
+                    Is able to generate <u><strong>simple text, XML, and JSON</u></strong> reports.
+                </p>
+            </div>
+        </div>
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Synopsis</h2>
+            </div>
+            <div class="col-10 synopsis">
+                <span>
+                    system_profiler <span class="text-warning"> [option]</span> <span class="text-primary"> [datatype1] [...] [datatypeN]</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="command-section-title appear">>Options</h2>
+            </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>
+                            -listDatatypes
+                        </h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            Generates a list with all data types available for you to obtain relevant information on.
+                        </p>
+
+                        <p>Example 1: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>system_profiler -listDatatypes</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                                Available Datatypes:
+                                SPParallelATADataType
+                                SPUniversalAccessDataType
+                                SPSecureElementDataType
+                                SPApplicationsDataType
+                                SPAudioDataType
+                                SPBluetoothDataType
+                                SPCameraDataType
+                                SPCardReaderDataType
+                                SPiBridgeDataType
+                                SPDeveloperToolsDataType
+                                SPDiagnosticsDataType
+                                SPDisabledSoftwareDataType
+                                SPDiscBurningDataType
+                                SPEthernetDataType
+                                SPExtensionsDataType
+                                SPFibreChannelDataType
+                                SPFireWireDataType
+                                SPFirewallDataType
+                                SPFontsDataType
+                                SPFrameworksDataType
+                                SPDisplaysDataType
+                                SPHardwareDataType
+                                SPInstallHistoryDataType
+                                SPInternationalDataType
+                                SPLegacySoftwareDataType
+                                SPNetworkLocationDataType, ...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-detailLevel [level]</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            Allows you to choose the detail level for the report between mini, basic, full
+                        </p>
+
+                        <p>Example 2: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>system_profiler -detailLevel basic SPAudioDataType</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">Audio:
+                                Devices:
+
+                                    MacBook Pro Microphone:<br>
+
+                                    Default Input Device: Yes<br>
+                                    Input Channels: 1<br>
+                                    Manufacturer: Apple Inc.<br>
+                                    Current SampleRate: 48000<br>
+                                    Transport: Built-in<br>
+                                    Input Source: MacBook Pro Microphone<br>
+
+                                    MacBook Pro Speakers:<br>
+
+                                    Default Output Device: Yes<br>
+                                    Default System Output Device: Yes<br>
+                                    Manufacturer: Apple Inc.<br>
+                                    Output Channels: 2, ...
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-json</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            Displays the report in json format
+                        </p>
+
+                        <p>Example 3: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>system_profiler -detailLevel mini -json SPAudioDataType</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                            {<br>
+                                "SPAudioDataType" : [<br>
+                                    {<br>
+                                    "_items" : [<br>
+                                        {
+                                        "_name" : "MacBook Pro Microphone",
+                                        "coreaudio_default_audio_input_device" : "spaudio_yes",
+                                        "coreaudio_device_input" : 1,
+                                        "coreaudio_device_manufacturer" : "Apple Inc.",
+                                        "coreaudio_device_srate" : 48000,
+                                        "coreaudio_device_transport" : "coreaudio_device_type_builtin",
+                                        "coreaudio_input_source" : "MacBook Pro Microphone"
+                                        }, ...
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="container-fluid options">
+                <div class="row appear align-items-start">
+                    <div class="col text-center">
+                        <h3>-xml</h3>
+                    </div>
+                    <div class="col-10 d-flex align-items-center flex-column">
+                        <p>
+                            Displays the report in xml format
+                        </p>
+
+                        <p>Example 4: </p>
+                        <div class="shell-window">
+                            <div class="shell-window-top-box">
+                                <img class="shell-window-top-box-img" src="../../css/shell-dots.png" alt="Dots">
+                                <div class="shell-window-top-text-box">
+                                    <p class="shell-window-top-text">-zsh</p>
+                                </div>
+                            </div>
+                            <p class="shell-window-bottom-box">>system_profiler -detailLevel mini -xml SPAudioDataType</p>
+                            <hr class="shell-divider">
+                            <p class="shell-window-bottom-box">
+                            &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+                                &lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;<br>
+                                &lt;plist version="1.0"&gt;<br>
+                                &lt;array&gt;<br>
+                                    &lt;dict&gt;
+                                        &lt;key&gt;_SPCommandLineArguments&lt;/key&gt;
+                                        &lt;array&gt;
+                                            &lt;string&gt;/usr/sbin/system_profiler&lt;/string&gt;
+                                            &lt;string&gt;-nospawn&lt;/string&gt;
+                                            &lt;string&gt;-xml&lt;/string&gt;
+                                            &lt;string&gt;SPAudioDataType&lt;/string&gt;
+                                            &lt;string&gt;-detailLevel&lt;/string&gt;
+                                            &lt;string&gt;full&lt;/string&gt;
+                                        &lt;/array&gt;, ...
+
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+
+        <div class="row appear">
+            <div class="col">
+                <h2 class="command-section-title">>Quiz</h2>
+            </div>
+            <div class="col-10">
+
+                <div class="bg-dark text-white card mb-4">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- quiz -->
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="quiz-progress">Progress:</span>
+                                <span id="question-number">Question ? out of ?</span>
+                            </div>
+                            <!-- progress bar -->
+                            <div class="mt-2">
+                                <div class="progress" style="height: 6px">
+                                    <div class="progress-bar bg-success" id="progress-bar-quiz" role="progressbar" style="width: 0%"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <!-- text -->
+                            <h3 class="mb-3" id="question-title">Question Title</h3>
+                            <div class="list-group" id="answer-options">
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white"
+                                    aria-current="true">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option1">
+                                        <label class="form-check-label stretched-link"
+                                            for="option1">Option 1</label>
+                                    </div>
+                                </div>
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option2">
+                                        <label class="form-check-label stretched-link"
+                                            for="option2">Option 2</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option3">
+                                        <label class="form-check-label stretched-link"
+                                            for="option3">Option 3</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option4">
+                                        <label class="form-check-label stretched-link"
+                                            for="option4">Option 4</label>
+                                    </div>
+                                </div>
+
+                                <!-- list group item -->
+                                <div class="list-group-item list-group-item-action bg-dark text-white">
+                                    <!-- form check -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="option5">
+                                        <label class="form-check-label stretched-link"
+                                            for="option5">Option 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="button-next">Next</button>
+
+            </div>
+
+            <address class="row appear mt-5">Page written by Davide Soardi</address>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../scripts/customElements.js"></script>
+    <script src="../../scripts/search.js"></script>
+    <script src="../../scripts/index.js"></script>
+    <script>
+        const questions = [
+            {
+                question: "How many report formats can this command generate?",
+                options: ["1", "2", "3"],
+                correct: 2
+            },
+            {
+                question: "This command is useful for troubleshooting system errors.",
+                options: ["True", "False"],
+                correct: 0
+            },
+            {
+                question: "You just want a quick overview of your hardware. Which detail level is most appropriate?",
+                options: ["mini", "basic", "full"],
+                correct: 0
+            }
+        ]
+
+        startQuiz(questions);
+    </script>
+
+</body>
+
+</html>
