@@ -1,0 +1,64 @@
+.shell-window {
+    background-color: black;
+    color: white;
+    font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+    font-size: 10px;
+
+    width: fit-content;
+    height: fit-content;
+    min-width: 200px;
+
+    padding: 0px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.shell-window-top-box {
+    background-color: rgb(46, 46, 45);
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 18px;
+
+    border: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+}
+
+.shell-window-top-box-img {
+    background-color: transparent;
+    position: absolute;
+    height: 30px;
+    width: 50px;
+    border: 1px;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+
+
+.shell-window-top-text-box {
+    font-weight: bold;
+    margin: auto;
+}
+
+
+.shell-window-top-text {
+    background-color: transparent;
+    margin: 0;
+}
+
+.shell-window-bottom-box {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin: 0px;
+    font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+    word-spacing: 10px;
+}
