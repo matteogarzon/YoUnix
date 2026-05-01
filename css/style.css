@@ -206,7 +206,7 @@ table td {
 
 /* Home by Lidia Boccella */
 body#home {
-    background-image: url("../../assets/home/letters_rain.gif");
+    background-image: url("../assets/home/letters_rain.gif");
     background-size: cover;  
     background-repeat: no-repeat;  
     background-position: center;
