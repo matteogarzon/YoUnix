@@ -1,0 +1,18 @@
+scripts/customElements.js
+  h_dd4c6f275118cc 28,32-41,47-52,58-65,71-78,85-89,98-108,112-116,120-129,136-139,145-153,159-164,170-174,207
+index.html
+  h_dd4c6f275118cc 13,19,23-32,38-43,49-56,62-69,76-80,89-99,103-107,111-120,127-130,136-144,150-155,161-165,243
+css/style.css
+  h_dd4c6f275118cc 209
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "0b09069bcd8eb52186f617f292ca91db597c73be",
+  "prompts": {},
+  "humans": {
+    "h_dd4c6f275118cc": {
+      "author": "Matteo Garzon"
+    }
+  }
+}
